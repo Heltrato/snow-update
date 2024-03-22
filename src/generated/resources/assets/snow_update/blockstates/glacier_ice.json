@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "activated=false,age=0": {
+      "model": "snow_update:block/glacier_ice"
+    },
+    "activated=false,age=1": {
+      "model": "snow_update:block/glacier_ice_1"
+    },
+    "activated=false,age=2": {
+      "model": "snow_update:block/glacier_ice_2"
+    },
+    "activated=false,age=3": {
+      "model": "snow_update:block/glacier_ice_3"
+    },
+    "activated=true,age=0": {
+      "model": "snow_update:block/glacier_ice"
+    },
+    "activated=true,age=1": {
+      "model": "snow_update:block/glacier_ice_1"
+    },
+    "activated=true,age=2": {
+      "model": "snow_update:block/glacier_ice_2"
+    },
+    "activated=true,age=3": {
+      "model": "snow_update:block/glacier_ice_3"
+    }
+  }
+}

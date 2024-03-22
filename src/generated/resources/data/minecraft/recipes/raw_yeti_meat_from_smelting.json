@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "snow_update:glacier_raw_yeti_meat"
+  },
+  "result": "snow_update:raw_yeti_meat"
+}

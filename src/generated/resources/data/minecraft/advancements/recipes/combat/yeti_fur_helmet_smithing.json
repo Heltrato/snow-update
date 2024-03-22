@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:yeti_fur_helmet_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yeti_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "snow_update:yeti_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yeti_fur"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:yeti_fur_helmet_smithing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

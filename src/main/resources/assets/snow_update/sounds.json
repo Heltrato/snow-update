@@ -1,0 +1,59 @@
+{
+    "juvenile_yeti_idle": {
+        "subtitles": "sounds.snow_update.juvenile_yeti_idle",
+        "sounds": [
+            "snow_update:juvenile_yeti_idle_1",
+            "snow_update:juvenile_yeti_idle_2",
+            "snow_update:juvenile_yeti_idle_3"
+        ]
+    },
+    "juvenile_yeti_hurt": {
+        "subtitles": "sounds.snow_update.juvenile_yeti_hurt",
+        "sounds": [
+            "snow_update:juvenile_yeti_idle_1",
+            "snow_update:juvenile_yeti_hurt_2",
+            "snow_update:juvenile_yeti_hurt_3"
+        ]
+    },
+    "juvenile_yeti_death": {
+        "subtitles": "sounds.snow_update.juvenile_yeti_death",
+        "sounds": [
+            "snow_update:juvenile_yeti_death_1",
+            "snow_update:juvenile_yeti_death_2"
+        ]
+    },
+    "yeti_horn": {
+        "subtitles": "sounds.snow_update.yeti_horn",
+        "sounds": ["snow_update:yeti_horn"]
+
+    },
+    "keystone_break": {
+        "subtitles": "sounds.snow_update.keystone_break",
+        "sounds": ["snow_update:keystone_break"]
+    },
+    "keystone_step": {
+        "subtitles": "sounds.snow_update.keystone_step",
+        "sounds": ["snow_update:keystone_step1", "snow_update:keystone_step2"]
+    },
+    "keystone_hit": {
+        "subtitles": "sounds.snow_update.keystone_hit",
+        "sounds": ["snow_update:keystone_hit"]
+    },
+    "keystone_place": {
+        "subtitles": "sounds.snow_update.keystone_place",
+        "sounds": ["snow_update:keystone_place"]
+    },
+    "keystone_shard_place": {
+        "subtitles": "sounds.snow_update.keystone_shard_place",
+        "sounds": ["snow_update:keystone_shard_place1", "snow_update:keystone_shard_place2", "snow_update:keystone_shard_place3"]
+    },
+    "ice_chunk_drop": {
+        "subtitles": "sounds.snow_update.ice_chunk_drop",
+        "sounds": ["snow_update:ice_chunk_drop"]
+    },
+    "ice_wand_wave": {
+        "subtitles": "sounds.snow_update.ice_wand_wave",
+        "sounds": ["snow_update:ice_wand_wave"]
+    }
+
+}

@@ -1,0 +1,68 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "snow_update:item/yeti_fur_helmet_quartz_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_netherite_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.3
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_redstone_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.4
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_copper_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.5
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_gold_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.6
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_emerald_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.7
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_diamond_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.8
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_glacier_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.85
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_lapis_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.9
+      }
+    },
+    {
+      "model": "snow_update:item/yeti_fur_helmet_amethyst_trim",
+      "predicate": {
+        "minecraft:trim_type": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "snow_update:item/yeti_fur_helmet"
+  }
+}

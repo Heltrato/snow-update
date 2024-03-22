@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "snow_update:yeti_fur"
+  },
+  "base": {
+    "item": "minecraft:leather_helmet"
+  },
+  "result": {
+    "item": "snow_update:yeti_fur_helmet"
+  },
+  "template": []
+}

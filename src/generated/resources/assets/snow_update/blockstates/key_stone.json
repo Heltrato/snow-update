@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,key=false": {
+      "model": "snow_update:block/keystone",
+      "y": 90
+    },
+    "facing=east,key=true": {
+      "model": "snow_update:block/keystone_with_key",
+      "y": 90
+    },
+    "facing=north,key=false": {
+      "model": "snow_update:block/keystone"
+    },
+    "facing=north,key=true": {
+      "model": "snow_update:block/keystone_with_key"
+    },
+    "facing=south,key=false": {
+      "model": "snow_update:block/keystone",
+      "y": 180
+    },
+    "facing=south,key=true": {
+      "model": "snow_update:block/keystone_with_key",
+      "y": 180
+    },
+    "facing=west,key=false": {
+      "model": "snow_update:block/keystone",
+      "y": 270
+    },
+    "facing=west,key=true": {
+      "model": "snow_update:block/keystone_with_key",
+      "y": 270
+    }
+  }
+}

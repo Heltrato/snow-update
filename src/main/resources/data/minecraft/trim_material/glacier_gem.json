@@ -1,0 +1,10 @@
+{
+    "asset_name": "glacier_gem",
+    "description": {
+        "color": "#1f3e6b",
+        "translate": "snow_update.trim_material.glacier_gem"
+    },
+    "ingredient": "snow_update:glacier_gem",
+    "item_model_index": 0.85
+
+}
