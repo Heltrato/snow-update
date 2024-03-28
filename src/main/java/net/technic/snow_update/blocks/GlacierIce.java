@@ -45,7 +45,7 @@ public class GlacierIce extends Block{
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         if (pState.getValue(ACTIVATED) == true) {
             int i = pState.getValue(AGE);
-            if (i < 4){
+            if (i < 3){
                 pLevel.setBlock(pPos, pState.setValue(AGE, i+1), 3);
             } else {
                 pLevel.setBlockAndUpdate(pPos, Blocks.AIR.defaultBlockState());

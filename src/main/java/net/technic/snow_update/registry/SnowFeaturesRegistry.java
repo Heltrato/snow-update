@@ -16,7 +16,7 @@ public class SnowFeaturesRegistry {
     ()-> new IceStalactiteFeature(DripstoneClusterConfiguration.CODEC));
 
 
-    public void register(IEventBus pBus){
+    public static void register(IEventBus pBus){
         FEATURES.register(pBus);
     }
 }

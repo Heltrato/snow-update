@@ -1,12 +1,20 @@
 package net.technic.snow_update.datagen;
 
+import org.jetbrains.annotations.NotNull;
+
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.technic.snow_update.SnowUpdate;
 import net.technic.snow_update.blocks.GlacierIce;
@@ -24,9 +32,40 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
 
     @Override
     protected void registerStatesAndModels() {
-       createKeyStoneBlock();
-       createGlacierIce();
+        createKeyStoneBlock();
+        createGlacierIce();
+        logBlock(((RotatedPillarBlock)SnowBlockRegistry.FROSTED_LOG.get()));
+        axisBlock(((RotatedPillarBlock)SnowBlockRegistry.FROSTED_WOOD.get()), blockTexture(SnowBlockRegistry.FROSTED_LOG.get()), blockTexture(SnowBlockRegistry.FROSTED_LOG.get()));
+        axisBlock(((RotatedPillarBlock)SnowBlockRegistry.STRIPPED_FROSTED_LOG.get()), blockTexture(SnowBlockRegistry.STRIPPED_FROSTED_LOG.get()), 
+            new ResourceLocation(SnowUpdate.MOD_ID, "block/stripped_frosted_log_top"));
+        axisBlock(((RotatedPillarBlock)SnowBlockRegistry.STRIPPED_FROSTED_WOOD.get()), blockTexture(SnowBlockRegistry.STRIPPED_FROSTED_LOG.get()),
+        blockTexture(SnowBlockRegistry.FROSTED_LOG.get()));
+        leavesBlock(SnowBlockRegistry.FROSTED_LEAVES.get());
+        blockAndItem(SnowBlockRegistry.FROSTED_PLANKS);
+
+        blockItem(SnowBlockRegistry.FROSTED_LOG);
+        blockItem(SnowBlockRegistry.FROSTED_WOOD);
+        blockItem(SnowBlockRegistry.STRIPPED_FROSTED_LOG);
+        blockItem(SnowBlockRegistry.STRIPPED_FROSTED_WOOD);
+
+
+        fenceBlock(((FenceBlock)SnowBlockRegistry.FROSTED_WOOD_FENCE.get()), blockTexture(SnowBlockRegistry.FROSTED_PLANKS.get()));
+        slabBlock(((SlabBlock)SnowBlockRegistry.FROSTED_PLANKS_SLAB.get()), blockTexture(SnowBlockRegistry.FROSTED_PLANKS.get()), blockTexture(SnowBlockRegistry.FROSTED_PLANKS.get()));
+        stairsBlock(((StairBlock)SnowBlockRegistry.FROSTED_PLANKS_STAIRS.get()), blockTexture(SnowBlockRegistry.FROSTED_PLANKS.get()));
+        
+        blockItem(SnowBlockRegistry.FROSTED_PLANKS_SLAB);
+        blockItem(SnowBlockRegistry.FROSTED_PLANKS_STAIRS);
+
+        blockAndItem(SnowBlockRegistry.SNOWY_COBBLESTONE);
+
     }
+
+    private void leavesBlock(@NotNull Block block) {
+        simpleBlockWithItem(block, models().singleTexture(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation("minecraft:block/leaves"), "all", 
+        blockTexture(block)).renderType("cutout"));
+    }
+
+
 
     private void createKeyStoneBlock(){
         getVariantBuilder(SnowBlockRegistry.KEY_STONE.get()).forAllStates(pState -> {
@@ -44,6 +83,10 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
 
     private void blockAndItem(RegistryObject<Block> registryObject) {
         simpleBlockWithItem(registryObject.get(), cubeAll(registryObject.get()));
+    }
+
+    private void blockItem(RegistryObject<Block> registryObject) {
+        simpleBlockItem(registryObject.get(), new ModelFile.UncheckedModelFile(SnowUpdate.MOD_ID + ":block/" + ForgeRegistries.BLOCKS.getKey(registryObject.get()).getPath()));
     }
     
     private void createGlacierIce() {

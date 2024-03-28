@@ -19,19 +19,21 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.technic.snow_update.SnowUpdate;
 
 public class SnowUpdatePlacedFeatures {
-    public static final ResourceKey<PlacedFeature> ICE_STALACTITE_PLACED = registerKey("ice_stalactite_place");
+    public static final ResourceKey<PlacedFeature> ICE_STALACTITE_PLACED = registerKey("ice_stalactite_placed");
 
-    private static ResourceKey<PlacedFeature> registerKey(String string) {
+    public static ResourceKey<PlacedFeature> registerKey(String string) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(SnowUpdate.MOD_ID, string));
     }
 
     public static void boostrap(BootstapContext<PlacedFeature> pContext){
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeature = pContext.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(pContext, ICE_STALACTITE_PLACED, configuredFeature.getOrThrow(SnowUpdateConifgFeatures.ICE_STALACTITE), 
+        register(pContext, ICE_STALACTITE_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.ICE_STALACTITE), 
         List.of(RarityFilter.onAverageOnceEvery(70), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50))
         , BiomeFilter.biome()));
     }
+
+    
 
     public static void register(BootstapContext<PlacedFeature> pContext, ResourceKey<PlacedFeature> pKey, Holder<ConfiguredFeature<?, ?>> pFeatureConfig, List<PlacementModifier> pModifiers){
         pContext.register(pKey, new PlacedFeature(pFeatureConfig, pModifiers));

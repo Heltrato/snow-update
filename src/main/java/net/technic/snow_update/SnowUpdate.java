@@ -14,7 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.technic.snow_update.Items.SnowUpdateItemProperties;
-import net.technic.snow_update.entity.IceChunkEntity;
 import net.technic.snow_update.entity.client.IceChunkEntityRenderer;
 import net.technic.snow_update.entity.client.JuvenileYetiRenderer;
 import net.technic.snow_update.entity.client.SnowBallRenderer;
@@ -22,6 +21,7 @@ import net.technic.snow_update.entity.client.TitanYetiRenderer;
 import net.technic.snow_update.registry.SnowBlockRegistry;
 import net.technic.snow_update.registry.SnowEffectsRegistry;
 import net.technic.snow_update.registry.SnowEntityRegistry;
+import net.technic.snow_update.registry.SnowFeaturesRegistry;
 import net.technic.snow_update.registry.SnowItemsRegistry;
 import net.technic.snow_update.registry.SnowMemoryModulesRegistry;
 import net.technic.snow_update.registry.SnowSoundsRegistry;
@@ -51,6 +51,7 @@ public class SnowUpdate
         SnowSoundsRegistry.register(modEventBus);
         SnowEffectsRegistry.register(modEventBus);
         SnowMemoryModulesRegistry.register(modEventBus);
+        SnowFeaturesRegistry.register(modEventBus);
 
     }
 

@@ -66,6 +66,8 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         glacierTrim("netherite_chestplate", "chestplate");
         glacierTrim("netherite_leggings", "leggings");
         glacierTrim("netherite_boots", "boots");
+
+        fenceInventory("frosted_wood_fence", new ResourceLocation(SnowUpdate.MOD_ID, "block/frosted_planks"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> pItem){
@@ -113,5 +115,7 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         .texture("layer0", new ResourceLocation("item/"+pName))
         .texture("layer1", new ResourceLocation("trims/items/"+pType+"_trim_glacier_gem"));
     }
+
+    
 
 }

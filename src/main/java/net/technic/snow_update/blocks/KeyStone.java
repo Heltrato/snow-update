@@ -58,8 +58,9 @@ public class KeyStone extends HorizontalDirectionalBlock{
                 if (blockPatternMatch != null) {
                     int[] offset = findOffset(blockPatternMatch);
                     
-                    BlockPos blockPos = blockPatternMatch.getFrontTopLeft().offset(offset[1], 3, offset[0]);
-                    BlockPos blockPos2 = blockPos.offset(4,-2,4);
+                    BlockPos blockPos = blockPatternMatch.getFrontTopLeft().offset(offset[1], 5, offset[0]);
+                    System.out.println(blockPos);
+                    BlockPos blockPos2 = blockPos.offset(7,-4,7);
                     for (int x = blockPos.getX(); x <= blockPos2.getX(); x++) {
                         for (int y = blockPos.getY(); y >= blockPos2.getY(); y--) {
                             for (int z = blockPos.getZ(); z <= blockPos2.getZ(); z++) {
@@ -94,7 +95,7 @@ public class KeyStone extends HorizontalDirectionalBlock{
     
     public static BlockPattern getOrCreateIceChunkShape() {
         if (icechunkShape == null) {
-            icechunkShape = BlockPatternBuilder.start().aisle("?????@?????", "???????????", "???^^^^^???", "??^^^^^^^??", "??^^^^^^^??", "@?^^^^^^^?@", "??^^^^^^^??", "??^^^^^^^??", "???^^^^^???", "???????????", "?????@?????")
+            icechunkShape = BlockPatternBuilder.start().aisle("?????@?????", "???????????", "???????????", "???????????", "???????????", "@?????????@", "???????????", "???????????", "???????????", "???????????", "?????@?????")
             .where('?', BlockInWorld.hasState(BlockStatePredicate.ANY)).where('@', BlockInWorld.hasState(BlockStatePredicate.forBlock(SnowBlockRegistry.KEY_STONE.get()).where(HAS_KEY, Predicates.equalTo(true))))
             .where('^', BlockInWorld.hasState(BlockStatePredicate.forBlock(SnowBlockRegistry.GLACIER_ICE.get()))).build();
             
@@ -107,17 +108,17 @@ public class KeyStone extends HorizontalDirectionalBlock{
         int[] offset = new int[2];
         Direction direction = pBlockPatternMatch.getUp();
         if (direction.equals(Direction.SOUTH)) {
-            offset[0] = -7;
-            offset[1] = -7;
+            offset[0] = -8;
+            offset[1] = -8;
         } else if (direction.equals(Direction.NORTH)) {
-            offset[0] = 3;
-            offset[1] = 3;
+            offset[0] = 4;
+            offset[1] = 4;
         } else if (direction.equals(Direction.WEST)) {
-            offset[0] = -7;
-            offset[1] = 3;
+            offset[0] = -8;
+            offset[1] = 4;
         } else {
-            offset[0] = 3;
-            offset[1] = -7;
+            offset[0] = 4;
+            offset[1] = -8;
         }
         return offset;
     }

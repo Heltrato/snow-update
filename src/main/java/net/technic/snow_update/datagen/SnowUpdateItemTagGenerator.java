@@ -11,6 +11,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.technic.snow_update.SnowUpdate;
+import net.technic.snow_update.registry.SnowBlockRegistry;
 import net.technic.snow_update.registry.SnowItemsRegistry;
 
 public class SnowUpdateItemTagGenerator extends ItemTagsProvider {
@@ -27,8 +28,18 @@ public class SnowUpdateItemTagGenerator extends ItemTagsProvider {
             .add(SnowItemsRegistry.YETI_FUR_CHESTPLATE.get())
             .add(SnowItemsRegistry.YETI_FUR_LEGGINGS.get())
             .add(SnowItemsRegistry.YETI_FUR_BOOTS.get());
+
         this.tag(ItemTags.TRIM_MATERIALS)
             .add(SnowItemsRegistry.GLACIER_GEM.get());
+
+        this.tag(ItemTags.LOGS_THAT_BURN).add(
+            SnowBlockRegistry.FROSTED_LOG.get().asItem(),
+            SnowBlockRegistry.FROSTED_WOOD.get().asItem(),
+            SnowBlockRegistry.STRIPPED_FROSTED_LOG.get().asItem(),
+            SnowBlockRegistry.STRIPPED_FROSTED_WOOD.get().asItem() 
+        );
+
+        this.tag(ItemTags.PLANKS).add(SnowBlockRegistry.FROSTED_PLANKS.get().asItem());
         
     }
 

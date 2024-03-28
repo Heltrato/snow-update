@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "snow_update:block/frosted_planks",
+    "side": "snow_update:block/frosted_planks",
+    "top": "snow_update:block/frosted_planks"
+  }
+}

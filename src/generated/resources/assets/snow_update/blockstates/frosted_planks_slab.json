@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snow_update:block/frosted_planks_slab"
+    },
+    "type=double": {
+      "model": "snow_update:block/frosted_planks"
+    },
+    "type=top": {
+      "model": "snow_update:block/frosted_planks_slab_top"
+    }
+  }
+}

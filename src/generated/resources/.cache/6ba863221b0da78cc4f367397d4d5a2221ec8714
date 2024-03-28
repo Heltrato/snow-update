@@ -1,3 +1,5 @@
-// 1.20.2	2024-03-05T17:43:57.0548203	Tags for minecraft:item mod id snow_update
+// 1.20.2	2024-03-27T19:52:57.0156493	Tags for minecraft:item mod id snow_update
+272e39496025b309a324ac9113b7eb1a6599675c data/minecraft/tags/items/logs_that_burn.json
+d70d6be62f2907630b45e3fe20076ffcb18fcc1c data/minecraft/tags/items/planks.json
 3ba581447c7236236ab339c8d6d82c38a9b96215 data/minecraft/tags/items/trimmable_armor.json
 8fd58cf3752c272c1962e75fce507725e97f8ac8 data/minecraft/tags/items/trim_materials.json

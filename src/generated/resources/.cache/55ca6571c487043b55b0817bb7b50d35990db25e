@@ -1,4 +1,4 @@
-// 1.20.2	2024-03-07T19:42:21.9453586	Item Models: snow_update
+// 1.20.2	2024-03-27T20:05:34.4169273	Item Models: snow_update
 d6c7ea70a62e2ec042f85f007de0fa4c880cf36e assets/snow_update/models/item/chainmail_boots_glacier_trim.json
 daa47c3420614a120e2a1158109d645c3fb06561 assets/snow_update/models/item/chainmail_chestplate_glacier_trim.json
 cdabe2a5b0d0b4c9fc81f2666b0e05e06038f185 assets/snow_update/models/item/chainmail_helmet_glacier_trim.json
@@ -8,6 +8,7 @@ f0745e9575689965a6e1fb912c20c1fa2886e791 assets/snow_update/models/item/cooked_y
 c0eddfbff15f6c06abaafc070ff660ef8456ddbf assets/snow_update/models/item/diamond_chestplate_glacier_trim.json
 97caf3b482d2cce174b9fb4aa517ef385f04ad21 assets/snow_update/models/item/diamond_helmet_glacier_trim.json
 df27e23aef022c83e5b44909b04b4b52b53911d1 assets/snow_update/models/item/diamond_leggings_glacier_trim.json
+4eb39b96c1c617c0c7a1683646502d0499074249 assets/snow_update/models/item/frosted_wood_fence.json
 99923f2a06b0f94c0a2f6ba79653425df91e09cd assets/snow_update/models/item/glacier_axe.json
 657f640f79f066642aee45d2bc86f2ec79ec9bd2 assets/snow_update/models/item/glacier_fragment_shard.json
 f438bfb135dbc4974f11c09bdc1cfd67c71cc938 assets/snow_update/models/item/glacier_gem.json
