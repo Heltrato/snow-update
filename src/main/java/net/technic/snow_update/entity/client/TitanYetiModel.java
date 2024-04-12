@@ -98,6 +98,7 @@ public class TitanYetiModel<T extends TitanYetiEntity> extends HierarchicalModel
 		this.animate(entity.stunRecoveryAnimationState, TitanYetiAnimations.STUNEND, ageInTicks, 1.0F);
 		this.animate(entity.chargeCrashAnimationState, TitanYetiAnimations.CHARGECRASH , ageInTicks, 1.0F);
 		this.animate(entity.meleeAttackAnimationState, TitanYetiAnimations.MELEE2, ageInTicks, 1.0F);
+		this.animate(entity.frozenAnimationState, TitanYetiAnimations.FROZEN, ageInTicks, 1.0F);
 	}
 
 	private void applyHeadRotation(TitanYetiEntity pEntity, float pNetHeadYaw, float pHeadPitch, float pAgeInTicks){

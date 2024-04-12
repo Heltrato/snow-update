@@ -3134,4 +3134,51 @@ public static final AnimationDefinition DIE = AnimationDefinition.Builder.withLe
 						AnimationChannel.Interpolations.LINEAR),
 					new Keyframe(1.8333f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
 						AnimationChannel.Interpolations.LINEAR))).build();
+	public static final AnimationDefinition FROZEN = AnimationDefinition.Builder.withLength(0.0F).looping()
+						.addAnimation("bone2", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(14.6256F, 12.6094F, -6.3309F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("bone2", new AnimationChannel(AnimationChannel.Targets.POSITION, 
+							new Keyframe(0.0F, KeyframeAnimations.posVec(0.0F, 10.0F, 10.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("body2", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(0.0F, 0.0F, 7.5F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("bone3", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(-2.5F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("Head2", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(19.1431F, 5.9032F, -16.5037F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("Head2", new AnimationChannel(AnimationChannel.Targets.POSITION, 
+							new Keyframe(0.0F, KeyframeAnimations.posVec(-5.0F, -3.0F, -5.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("nose3", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(-13.3568F, -5.4082F, 9.5556F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("R_Arm1", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(-24.1487F, 20.7048F, -6.5072F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("R_Arm1", new AnimationChannel(AnimationChannel.Targets.POSITION, 
+							new Keyframe(0.0F, KeyframeAnimations.posVec(0.0F, -4.0F, 0.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("R_Arm2", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(-28.9854F, 17.6605F, -24.5401F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("R_Arm2", new AnimationChannel(AnimationChannel.Targets.POSITION, 
+							new Keyframe(0.0F, KeyframeAnimations.posVec(0.0F, 0.0F, -5.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("leg2", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(-2.4621F, 0.434F, 9.9907F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("leg2", new AnimationChannel(AnimationChannel.Targets.POSITION, 
+							new Keyframe(0.0F, KeyframeAnimations.posVec(1.0F, 0.0F, -6.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("leg1", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
+							new Keyframe(0.0F, KeyframeAnimations.degreeVec(-17.5F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.addAnimation("leg1", new AnimationChannel(AnimationChannel.Targets.POSITION, 
+							new Keyframe(0.0F, KeyframeAnimations.posVec(2.0F, -3.0F, 3.0F), AnimationChannel.Interpolations.LINEAR)
+						))
+						.build();
 }

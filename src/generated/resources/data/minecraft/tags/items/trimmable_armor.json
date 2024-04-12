@@ -3,6 +3,10 @@
     "snow_update:yeti_fur_helmet",
     "snow_update:yeti_fur_chestplate",
     "snow_update:yeti_fur_leggings",
-    "snow_update:yeti_fur_boots"
+    "snow_update:yeti_fur_boots",
+    "snow_update:glacier_helmet",
+    "snow_update:glacier_chestplate",
+    "snow_update:glacier_leggings",
+    "snow_update:glacier_boots"
   ]
 }

@@ -21,10 +21,13 @@ import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.technic.snow_update.entity.TitanYetiEntity;
 import net.technic.snow_update.registry.SnowBlockRegistry;
 import net.technic.snow_update.registry.SnowItemsRegistry;
 import net.technic.snow_update.registry.SnowSoundsRegistry;
+import java.util.List;
 
 public class KeyStone extends HorizontalDirectionalBlock{
     public static final BooleanProperty HAS_KEY = BooleanProperty.create("key");
@@ -58,9 +61,13 @@ public class KeyStone extends HorizontalDirectionalBlock{
                 if (blockPatternMatch != null) {
                     int[] offset = findOffset(blockPatternMatch);
                     
-                    BlockPos blockPos = blockPatternMatch.getFrontTopLeft().offset(offset[1], 5, offset[0]);
-                    System.out.println(blockPos);
-                    BlockPos blockPos2 = blockPos.offset(7,-4,7);
+                    BlockPos blockPos = blockPatternMatch.getFrontTopLeft().offset(offset[1], 6, offset[0]);
+                    System.out.println(blockPos+" "+blockPatternMatch.getUp());
+                    BlockPos blockPos2 = blockPos.offset(7,-5,7);
+                    List<TitanYetiEntity> list = pLevel.getEntitiesOfClass(TitanYetiEntity.class, new AABB(blockPos, blockPos2));
+                    for (TitanYetiEntity t : list) {
+                        t.setShouldUnfreeze(true);
+                    }
                     for (int x = blockPos.getX(); x <= blockPos2.getX(); x++) {
                         for (int y = blockPos.getY(); y >= blockPos2.getY(); y--) {
                             for (int z = blockPos.getZ(); z <= blockPos2.getZ(); z++) {
@@ -115,9 +122,9 @@ public class KeyStone extends HorizontalDirectionalBlock{
             offset[1] = 4;
         } else if (direction.equals(Direction.WEST)) {
             offset[0] = -8;
-            offset[1] = 4;
+            offset[1] = 2;
         } else {
-            offset[0] = 4;
+            offset[0] = 2;
             offset[1] = -8;
         }
         return offset;

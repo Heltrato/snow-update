@@ -27,7 +27,11 @@ public class SnowUpdateItemTagGenerator extends ItemTagsProvider {
             .add(SnowItemsRegistry.YETI_FUR_HELMET.get())
             .add(SnowItemsRegistry.YETI_FUR_CHESTPLATE.get())
             .add(SnowItemsRegistry.YETI_FUR_LEGGINGS.get())
-            .add(SnowItemsRegistry.YETI_FUR_BOOTS.get());
+            .add(SnowItemsRegistry.YETI_FUR_BOOTS.get())
+            .add(SnowItemsRegistry.GLACIER_HELMET.get())
+            .add(SnowItemsRegistry.GLACIER_CHESTPLATE.get())
+            .add(SnowItemsRegistry.GLACIER_LEGGINGS.get())
+            .add(SnowItemsRegistry.GLACIER_BOOTS.get());
 
         this.tag(ItemTags.TRIM_MATERIALS)
             .add(SnowItemsRegistry.GLACIER_GEM.get());

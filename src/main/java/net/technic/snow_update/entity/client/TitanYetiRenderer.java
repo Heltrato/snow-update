@@ -16,11 +16,12 @@ import net.technic.snow_update.entity.layers.SnowUpdateLayers;
 public class TitanYetiRenderer extends MobRenderer<TitanYetiEntity, TitanYetiModel<TitanYetiEntity>>{
 
     private ResourceLocation tex = new ResourceLocation(SnowUpdate.MOD_ID, "textures/entity/titan_yeti.png");
+    private ResourceLocation frozen = new ResourceLocation(SnowUpdate.MOD_ID, "textures/entity/titan_yeti_frozen.png");
 
     public TitanYetiRenderer(Context pContext) {
         super(pContext, new TitanYetiModel<>(pContext.bakeLayer(SnowUpdateLayers.TITAN_YETI_LAYER)), 1.2F);
     }
-
+    
     @Override
     public void render(TitanYetiEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack,
             MultiBufferSource pBuffer, int pPackedLight) {

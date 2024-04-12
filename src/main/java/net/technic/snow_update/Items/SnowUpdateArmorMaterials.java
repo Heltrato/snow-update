@@ -11,7 +11,8 @@ import net.technic.snow_update.registry.SnowItemsRegistry;
 import java.util.function.Supplier;
 
 public enum SnowUpdateArmorMaterials implements ArmorMaterial{
-    YETI_FUR("yeti_fur", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()-> Ingredient.of(SnowItemsRegistry.YETI_FUR.get()));
+    YETI_FUR("yeti_fur", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()-> Ingredient.of(SnowItemsRegistry.YETI_FUR.get())),
+    GLACIER("glacier", 15 , new int[]{2, 5, 6, 2}, 9, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.0F, ()-> Ingredient.of(SnowItemsRegistry.GLACIER_SHARD.get()));
     
     private final String name;
     private final int durabilityMultiplier;

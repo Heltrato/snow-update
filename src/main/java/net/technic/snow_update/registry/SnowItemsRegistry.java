@@ -65,7 +65,13 @@ public class SnowItemsRegistry {
 
     public static final RegistryObject<Item> ICE_WAND = ITEMS.register("ice_wand", ()-> new IceWand(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> GLACIER_HELMET = ITEMS.register("glacier_helmet", ()-> new ArmorItem(SnowUpdateArmorMaterials.GLACIER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> GLACIER_CHESTPLATE = ITEMS.register("glacier_chestplate", ()-> new ArmorItem(SnowUpdateArmorMaterials.GLACIER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> GLACIER_LEGGINGS = ITEMS.register("glacier_leggings", ()-> new ArmorItem(SnowUpdateArmorMaterials.GLACIER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> GLACIER_BOOTS = ITEMS.register("glacier_boots", ()-> new ArmorItem(SnowUpdateArmorMaterials.GLACIER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus pEventBus){
         ITEMS.register(pEventBus);

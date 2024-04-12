@@ -94,6 +94,54 @@ public class SnowBlockRegistry {
     public static final RegistryObject<Block> FROSTED_PLANKS_STAIRS = registerBlock("frosted_planks_stairs", 
     ()-> new StairBlock(()-> SnowBlockRegistry.FROSTED_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
 
+    public static final RegistryObject<Block> CHISELED_FRIGIDITE = registerBlock("chiseled_frigidite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> CHISELED_KORISTONE = registerBlock("chiseled_koristone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> FRIGITIDE = registerBlock("frigidite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> FRIGITIDE_BRICKS = registerBlock("frigidite_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+
+    public static final RegistryObject<Block> FROSTED_FRIGITIDE = registerBlock("frosted_frigidite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> GLACIER_BLOCK = registerBlock("glacier_block_material", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
+    public static final RegistryObject<Block> GLACIER_CRYSTAL = registerBlock("glacier_crystal", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)));
+
+    public static final RegistryObject<Block> PACKED_ICE_BRICKS = registerBlock("packed_ice_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+
+    public static final RegistryObject<Block> PACKED_SNOW = registerBlock("packed_snow", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)));
+
+    public static final RegistryObject<Block> PACKED_SNOW_BRICKS = registerBlock("packed_snow_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)));
+
+    public static final RegistryObject<Block> POLISHED_FRIGITIDE = registerBlock("polished_frigidite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> POLISHED_BLUE_ICE = registerBlock("polished_blue_ice", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_ICE)));
+
+    public static final RegistryObject<Block> POLISHED_KORISTONE = registerBlock("polished_koristone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> POLISHED_PACKED_ICE = registerBlock("polished_packed_ice", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)));
+
+    public static final RegistryObject<Block> SHREDDED_KORISTONE = registerBlock("shredded_koristone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> SNOW_BRICKS = registerBlock("snow_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)));
+
+    public static final RegistryObject<Block> CHISELED_HOWLITE = registerBlock("chiseled_howlite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final RegistryObject<Block> CHISELED_HOWLITE_BRICKS = registerBlock("chiseled_howlite_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+
+    public static final RegistryObject<Block> CHISELED_HOWLITE_TILES = registerBlock("chiseled_howlite_tiles", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+
+    public static final RegistryObject<Block> CHISELED_POLISHED_HOWLITE = registerBlock("chiseled_polished_howlite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
+
+    public static final RegistryObject<Block> HOWLITE = registerBlock("howlite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
+    public static final RegistryObject<Block> HOWLITE_BRICKS = registerBlock("howlite_bricks", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+
+    public static final RegistryObject<Block> HOWLITE_TILES = registerBlock("howlite_tiles", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
+    public static final RegistryObject<Block> POLISHED_HOWLITE = registerBlock("polished_howlite", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String pName, Supplier<T> pSupplier){
         RegistryObject<T> toReturn = BLOCKS.register(pName, pSupplier);
         registerBlock(pName, toReturn);

@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:jigsaw",
+  "type": "snow_update:keystone",
 
   "start_pool": "snow_update:keystone/start_pool",
 

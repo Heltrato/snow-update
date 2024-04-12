@@ -18,13 +18,17 @@ import net.technic.snow_update.entity.client.IceChunkEntityRenderer;
 import net.technic.snow_update.entity.client.JuvenileYetiRenderer;
 import net.technic.snow_update.entity.client.SnowBallRenderer;
 import net.technic.snow_update.entity.client.TitanYetiRenderer;
+import net.technic.snow_update.registry.SnowBlockEntitiesRegistry;
 import net.technic.snow_update.registry.SnowBlockRegistry;
+import net.technic.snow_update.registry.SnowCreativeTabRegistry;
 import net.technic.snow_update.registry.SnowEffectsRegistry;
 import net.technic.snow_update.registry.SnowEntityRegistry;
 import net.technic.snow_update.registry.SnowFeaturesRegistry;
 import net.technic.snow_update.registry.SnowItemsRegistry;
 import net.technic.snow_update.registry.SnowMemoryModulesRegistry;
+import net.technic.snow_update.registry.SnowPaitingsRegistry;
 import net.technic.snow_update.registry.SnowSoundsRegistry;
+import net.technic.snow_update.registry.SnowStructuresRegistry;
 
 import org.slf4j.Logger;
 
@@ -52,6 +56,10 @@ public class SnowUpdate
         SnowEffectsRegistry.register(modEventBus);
         SnowMemoryModulesRegistry.register(modEventBus);
         SnowFeaturesRegistry.register(modEventBus);
+        SnowStructuresRegistry.register(modEventBus);
+        SnowCreativeTabRegistry.register(modEventBus);
+        SnowBlockEntitiesRegistry.register(modEventBus);
+        SnowPaitingsRegistry.register(modEventBus);
 
     }
 

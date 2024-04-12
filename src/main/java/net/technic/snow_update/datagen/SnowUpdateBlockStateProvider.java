@@ -57,6 +57,31 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
         blockItem(SnowBlockRegistry.FROSTED_PLANKS_STAIRS);
 
         blockAndItem(SnowBlockRegistry.SNOWY_COBBLESTONE);
+        blockAndItem(SnowBlockRegistry.CHISELED_FRIGIDITE);
+        blockAndItem(SnowBlockRegistry.CHISELED_KORISTONE);
+        blockAndItem(SnowBlockRegistry.FRIGITIDE);
+        blockAndItem(SnowBlockRegistry.FRIGITIDE_BRICKS);
+        blockAndItem(SnowBlockRegistry.FROSTED_FRIGITIDE);
+        blockAndItem(SnowBlockRegistry.GLACIER_BLOCK);
+        blockAndItem(SnowBlockRegistry.GLACIER_CRYSTAL);
+        blockAndItem(SnowBlockRegistry.PACKED_ICE_BRICKS);
+        blockAndItem(SnowBlockRegistry.PACKED_SNOW);
+        blockAndItem(SnowBlockRegistry.PACKED_SNOW_BRICKS);
+        blockAndItem(SnowBlockRegistry.POLISHED_BLUE_ICE);
+        blockAndItem(SnowBlockRegistry.POLISHED_FRIGITIDE);
+        blockAndItem(SnowBlockRegistry.POLISHED_KORISTONE);
+        blockAndItem(SnowBlockRegistry.POLISHED_PACKED_ICE);
+        blockAndItem(SnowBlockRegistry.SHREDDED_KORISTONE);
+        blockAndItem(SnowBlockRegistry.SNOW_BRICKS);
+        blockAndItem(SnowBlockRegistry.CHISELED_HOWLITE);
+        blockAndItem(SnowBlockRegistry.CHISELED_HOWLITE_BRICKS);
+        blockAndItem(SnowBlockRegistry.CHISELED_HOWLITE_TILES);
+        blockAndItem(SnowBlockRegistry.CHISELED_POLISHED_HOWLITE);
+        blockAndItem(SnowBlockRegistry.HOWLITE);
+        blockAndItem(SnowBlockRegistry.HOWLITE_BRICKS);
+        blockAndItem(SnowBlockRegistry.HOWLITE_TILES);
+        blockAndItem(SnowBlockRegistry.POLISHED_HOWLITE);
+
 
     }
 

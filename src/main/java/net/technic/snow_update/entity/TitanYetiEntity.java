@@ -35,7 +35,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -57,6 +56,7 @@ public class TitanYetiEntity extends Monster{
     public final AnimationState stunRecoveryAnimationState = new AnimationState();
     public final AnimationState chargeCrashAnimationState = new AnimationState();
     public final AnimationState meleeAttackAnimationState = new AnimationState();
+    public final AnimationState frozenAnimationState = new AnimationState();
     private final TitanYetiPart weakspot;
     private final TitanYetiPart[] parts;
     private final CustomLookControl lookControl;
@@ -65,6 +65,7 @@ public class TitanYetiEntity extends Monster{
     public int chargeStartAnimationTimeout = 0;
     public int crashAniamtionTimeout = 0;
     public int chargeCD = 0;
+    private int ticksFrozen = 0;
     private final ServerBossEvent bossEvent = new ServerBossEvent(Component.literal("Titan Yeti"), BossBarColor.BLUE, BossBarOverlay.NOTCHED_12);
     
 
@@ -77,6 +78,8 @@ public class TitanYetiEntity extends Monster{
     private static final EntityDataAccessor<Boolean> CRASHED = SynchedEntityData.defineId(TitanYetiEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(TitanYetiEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> START_RECOVERY = SynchedEntityData.defineId(TitanYetiEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> FROZEN = SynchedEntityData.defineId(TitanYetiEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SHOULD_UNFREEZE = SynchedEntityData.defineId(TitanYetiEntity.class, EntityDataSerializers.BOOLEAN);
 
     public TitanYetiEntity(EntityType<? extends TitanYetiEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -85,6 +88,9 @@ public class TitanYetiEntity extends Monster{
         this.parts = new TitanYetiPart[]{this.weakspot};
         this.getNavigation().setCanFloat(true);
         this.setId(ENTITY_COUNTER.getAndAdd(this.parts.length + 1) + 1);
+        this.noPhysics = true;
+        setNoGravity(true);
+        setPersistenceRequired();
     }
     
     protected void defineSynchedData(){
@@ -95,6 +101,8 @@ public class TitanYetiEntity extends Monster{
         this.entityData.define(CRASHED, false);
         this.entityData.define(STUNNED, false);
         this.entityData.define(START_RECOVERY, false);
+        this.entityData.define(FROZEN, true);
+        this.entityData.define(SHOULD_UNFREEZE, false);
     }
 
     @Override
@@ -157,6 +165,7 @@ public class TitanYetiEntity extends Monster{
         this.chargeCrashAnimationState.animateWhen(isCrashing(), tickCount);
         this.stunAnimationState.animateWhen(isStunned(), tickCount);
         this.stunRecoveryAnimationState.animateWhen(isRecovering(), tickCount);
+        this.frozenAnimationState.animateWhen(isFrozen(), tickCount);
     }
 
     public boolean isRecovering() {
@@ -175,8 +184,12 @@ public class TitanYetiEntity extends Monster{
         return this.entityData.get(START_CHARGING);
     }
 
-    public boolean isCrashing(){
+    public boolean isCrashing() {
         return this.entityData.get(CRASHED);
+    }
+
+    public boolean isUnfreezing() {
+        return this.entityData.get(SHOULD_UNFREEZE);
     }
 
     public void tick(){
@@ -188,7 +201,18 @@ public class TitanYetiEntity extends Monster{
         float f1 = Mth.sin(f-offset);
         float f2 = Mth.cos(f-offset);
 
-              
+        if (isUnfreezing()) {
+            this.ticksFrozen++;
+        }
+
+        if (this.ticksFrozen > 240 && isUnfreezing()) {
+            this.setFrozen(false);
+            this.setShouldUnfreeze(false);
+            this.noPhysics = false;
+            setNoGravity(false);
+            
+        }
+         
         this.tickPart(weakspot, f2, 3.2D, f1);
 
         if (this.chargeCD > 0){
@@ -220,6 +244,18 @@ public class TitanYetiEntity extends Monster{
 
     public boolean isOcupied(){
         return this.isStartCharging() || this.isCharging() || this.isCrashing() || this.isStunned() || this.isRecovering() || this.isAttacking();
+    }
+
+    public void setFrozen(boolean b) {
+        this.entityData.set(FROZEN, b);
+    }
+
+    public boolean isFrozen() {
+        return this.entityData.get(FROZEN);
+    }
+    
+    public void setShouldUnfreeze(boolean b) {
+        this.entityData.set(SHOULD_UNFREEZE, b);
     }
 
     @Override
@@ -371,8 +407,6 @@ public class TitanYetiEntity extends Monster{
             this.walkAnimation.setSpeed(this.walkAnimation.speed() + 0.6F);
         }
         
-        
-        
         this.bossEvent.setProgress(this.getHealth()/this.getMaxHealth());
     }
 
@@ -385,6 +419,17 @@ public class TitanYetiEntity extends Monster{
             pOffsetY-=1.4D; 
         }
         pPart.setPos(this.getX() + pOffsetX, this.getY() + pOffsetY, this.getZ() + pOffsetZ);
+    }
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        setNoGravity(pCompound.getBoolean("gravity"));
+        this.noPhysics = pCompound.getBoolean("physics");
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag pCompound) {
+        pCompound.putBoolean("physics", this.noPhysics);
+        pCompound.putBoolean("gravity", isNoGravity());
     }
 
     public class TitanYetiPart extends PartEntity<TitanYetiEntity>{
@@ -419,6 +464,13 @@ public class TitanYetiEntity extends Monster{
 
         }
 
+        
+
+
+        public boolean shouldBeSaved() {
+            return false;
+        }
+
         @Override
         protected void readAdditionalSaveData(CompoundTag pCompound) {
             
@@ -427,11 +479,6 @@ public class TitanYetiEntity extends Monster{
         @Override
         protected void addAdditionalSaveData(CompoundTag pCompound) {
             
-        }
-
-
-        public boolean shouldBeSaved() {
-            return false;
         }
         
         

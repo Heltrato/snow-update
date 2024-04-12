@@ -36,6 +36,10 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         armorTrim(SnowItemsRegistry.YETI_FUR_CHESTPLATE);
         armorTrim(SnowItemsRegistry.YETI_FUR_LEGGINGS);
         armorTrim(SnowItemsRegistry.YETI_FUR_BOOTS);
+        armorTrim(SnowItemsRegistry.GLACIER_HELMET);
+        armorTrim(SnowItemsRegistry.GLACIER_CHESTPLATE);
+        armorTrim(SnowItemsRegistry.GLACIER_LEGGINGS);
+        armorTrim(SnowItemsRegistry.GLACIER_BOOTS);
         handHeldItem(SnowItemsRegistry.GLACIER_SWORD);
         handHeldItem(SnowItemsRegistry.GLACIER_PICKAXE);
         handHeldItem(SnowItemsRegistry.GLACIER_AXE);

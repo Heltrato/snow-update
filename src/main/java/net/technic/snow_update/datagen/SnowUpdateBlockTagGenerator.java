@@ -22,17 +22,15 @@ public class SnowUpdateBlockTagGenerator extends BlockTagsProvider{
     @Override
     protected void addTags(Provider pProvider) {
         this.tag(BlockTags.FENCES).add(SnowBlockRegistry.FROSTED_WOOD_FENCE.get());
-
         this.tag(BlockTags.LOGS_THAT_BURN).add(
             SnowBlockRegistry.FROSTED_LOG.get(),
             SnowBlockRegistry.FROSTED_WOOD.get(),
             SnowBlockRegistry.STRIPPED_FROSTED_LOG.get(),
             SnowBlockRegistry.STRIPPED_FROSTED_WOOD.get()
         );
-
         this.tag(BlockTags.PLANKS).add(SnowBlockRegistry.FROSTED_PLANKS.get());
-
         this.tag(BlockTags.STAIRS).add(SnowBlockRegistry.FROSTED_PLANKS_STAIRS.get());
+        this.tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(SnowBlockRegistry.KEY_STONE.get());
     }
 
 }

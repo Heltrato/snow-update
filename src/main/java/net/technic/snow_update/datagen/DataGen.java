@@ -25,9 +25,11 @@ public class DataGen {
         generator.addProvider(pEvent.includeServer(), new SnowUpdateRecipeProvider(packOutput));
         generator.addProvider(pEvent.includeClient(), new ItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(pEvent.includeClient(), new MinecraftItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(pEvent.includeServer(), SnowUpdateLootTableProvider.create(packOutput));
+        //generator.addProvider(pEvent.includeServer(), SnowUpdateLootTableProvider.create(packOutput));
         
         generator.addProvider(pEvent.includeServer(), new SnowUpdateItemTagGenerator(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(pEvent.includeServer(), new SnowUpdateWorldGenProvider(packOutput, lookUpProvider));
+
+        generator.addProvider(pEvent.includeClient(), new PaintingVariantTagGenerator(packOutput, lookUpProvider, existingFileHelper));
     }
 }
