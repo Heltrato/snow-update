@@ -23,5 +23,9 @@ public class SnowUpdateLayers {
     public static final ModelLayerLocation YETI_FUR_ARMOR_LAYER_4 = new ModelLayerLocation(new ResourceLocation(SnowUpdate.MOD_ID, "yeti_fur_armor_layer_4"), "yeti_fur_armor_layer_4");
 
     public static final ModelLayerLocation ICE_CHUNK = new ModelLayerLocation(new ResourceLocation(SnowUpdate.MOD_ID, "ice_chunk_layer"), "ice_chunk_layer");
+
+    public static final ModelLayerLocation FROSTWOOD_BOAT = new ModelLayerLocation(new ResourceLocation(SnowUpdate.MOD_ID, "boat/frostwood"), "main");
+
+    public static final ModelLayerLocation FROSTWOOD_CHESTBOAT = new ModelLayerLocation(new ResourceLocation(SnowUpdate.MOD_ID, "chest_boat/frostwood"), "main");
     
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "snow_update:block/tinted_grass",
+  "textures": {
+    "cross": "snow_update:block/snowy_tall_grass_top_tint",
+    "snow": "snow_update:block/snowy_tall_grass_top"
+  }
+}

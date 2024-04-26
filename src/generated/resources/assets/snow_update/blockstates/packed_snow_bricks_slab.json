@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snow_update:block/packed_snow_bricks_slab"
+    },
+    "type=double": {
+      "model": "snow_update:block/packed_snow_bricks"
+    },
+    "type=top": {
+      "model": "snow_update:block/packed_snow_bricks_slab_top"
+    }
+  }
+}

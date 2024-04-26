@@ -1,5 +1,7 @@
 package net.technic.snow_update.event;
 
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +29,9 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(SnowUpdateLayers.YETI_FUR_ARMOR_LAYER_3, YetiArmorModel.Leggings::createBodyLayer);
         event.registerLayerDefinition(SnowUpdateLayers.YETI_FUR_ARMOR_LAYER_4, YetiArmorModel.Boots::createBodyLayer);
         event.registerLayerDefinition(SnowUpdateLayers.ICE_CHUNK, IceChunkEntityModel::createBodyLayer);
+        event.registerLayerDefinition(SnowUpdateLayers.FROSTWOOD_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(SnowUpdateLayers.FROSTWOOD_CHESTBOAT, ChestBoatModel::createBodyModel);
+
     }
 
     @SubscribeEvent

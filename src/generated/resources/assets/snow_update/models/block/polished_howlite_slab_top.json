@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "snow_update:block/polished_howlite",
+    "side": "snow_update:block/polished_howlite",
+    "top": "snow_update:block/polished_howlite"
+  }
+}

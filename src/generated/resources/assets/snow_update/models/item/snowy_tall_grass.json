@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "snow_update:block/snowy_tall_grass_top_tint",
+    "layer1": "snow_update:block/snowy_tall_grass_top"
+  }
+}

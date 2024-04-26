@@ -1,3 +1,7 @@
-// 1.20.2	2024-03-25T19:22:17.8770537	Registries
+// 1.20.2	2024-04-19T15:16:09.4049324	Registries
+7220e42dd896bd75329cc2b845fd217775acd5e6 data/snow_update/forge/biome_modifier/add_tree_frosted.json
+625efbdf6e66770455c1cd353442735ec5e630dd data/snow_update/worldgen/biome/ice_caves.json
+92d3e0c0326691047c2f17f48c383f9741314921 data/snow_update/worldgen/configured_feature/frostwood_key.json
 cd16f1b7633d545e74b56e7774ab695bd9f3b445 data/snow_update/worldgen/configured_feature/ice_stalactite.json
+ebe4c451bdf785023463da52ccd60fed301546f2 data/snow_update/worldgen/placed_feature/frostwood_placed.json
 21442c23076cc07356932b40c9fccf0361c30398 data/snow_update/worldgen/placed_feature/ice_stalactite_placed.json

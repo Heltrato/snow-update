@@ -31,6 +31,8 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(SnowItemsRegistry.GLACIER_FRAGMENT_SHARD);
         simpleItem(SnowItemsRegistry.GLACIER_GEM);
         simpleItem(SnowItemsRegistry.GLACIER_SHARD);
+        simpleItem(SnowItemsRegistry.FROSTWOOD_BOAT);
+        simpleItem(SnowItemsRegistry.FROSTWOOD_CHESTBOAT);
         withExistingParent(SnowItemsRegistry.JUVENILE_YETI_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         armorTrim(SnowItemsRegistry.YETI_FUR_HELMET);
         armorTrim(SnowItemsRegistry.YETI_FUR_CHESTPLATE);

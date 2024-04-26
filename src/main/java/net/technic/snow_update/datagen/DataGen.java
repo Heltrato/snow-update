@@ -31,5 +31,6 @@ public class DataGen {
         generator.addProvider(pEvent.includeServer(), new SnowUpdateWorldGenProvider(packOutput, lookUpProvider));
 
         generator.addProvider(pEvent.includeClient(), new PaintingVariantTagGenerator(packOutput, lookUpProvider, existingFileHelper));
+        //generator.addProvider(pEvent.includeServer(), new SnowUpdateBiomeTagsProvider(packOutput, lookUpProvider, existingFileHelper));
     }
 }

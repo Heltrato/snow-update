@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "snow_update:block/cobbled_frigidite",
+    "side": "snow_update:block/cobbled_frigidite",
+    "top": "snow_update:block/cobbled_frigidite"
+  }
+}

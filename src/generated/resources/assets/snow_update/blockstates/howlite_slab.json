@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snow_update:block/howlite_slab"
+    },
+    "type=double": {
+      "model": "snow_update:block/howlite"
+    },
+    "type=top": {
+      "model": "snow_update:block/howlite_slab_top"
+    }
+  }
+}

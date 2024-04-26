@@ -1,4 +1,4 @@
-// 1.20.2	2024-04-08T17:16:59.4191252	Item Models: snow_update
+// 1.20.2	2024-04-15T00:30:08.1091706	Item Models: snow_update
 d6c7ea70a62e2ec042f85f007de0fa4c880cf36e assets/snow_update/models/item/chainmail_boots_glacier_trim.json
 daa47c3420614a120e2a1158109d645c3fb06561 assets/snow_update/models/item/chainmail_chestplate_glacier_trim.json
 cdabe2a5b0d0b4c9fc81f2666b0e05e06038f185 assets/snow_update/models/item/chainmail_helmet_glacier_trim.json
@@ -9,6 +9,8 @@ c0eddfbff15f6c06abaafc070ff660ef8456ddbf assets/snow_update/models/item/diamond_
 97caf3b482d2cce174b9fb4aa517ef385f04ad21 assets/snow_update/models/item/diamond_helmet_glacier_trim.json
 df27e23aef022c83e5b44909b04b4b52b53911d1 assets/snow_update/models/item/diamond_leggings_glacier_trim.json
 4eb39b96c1c617c0c7a1683646502d0499074249 assets/snow_update/models/item/frosted_wood_fence.json
+4178d1d32f12bac4e40bea3f075dd54cc8b7b0d4 assets/snow_update/models/item/frostwood_boat.json
+817402d1675ae3f8edc93284c56c23a7c001abf2 assets/snow_update/models/item/frostwood_chest_boat.json
 99923f2a06b0f94c0a2f6ba79653425df91e09cd assets/snow_update/models/item/glacier_axe.json
 16fccab909c234a83a6d408177bd356347ef48e5 assets/snow_update/models/item/glacier_boots.json
 62e308e9191b37af71ea55c802b84b4070d98a68 assets/snow_update/models/item/glacier_boots_amethyst_trim.json

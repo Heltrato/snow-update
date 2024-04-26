@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,waterlogged=false": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 180
+    },
+    "facing=down,waterlogged=true": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 180
+    },
+    "facing=east,waterlogged=false": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90
+    },
+    "facing=north,waterlogged=true": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90
+    },
+    "facing=south,waterlogged=false": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,waterlogged=false": {
+      "model": "snow_update:block/frosted_leaves_spikes"
+    },
+    "facing=up,waterlogged=true": {
+      "model": "snow_update:block/frosted_leaves_spikes"
+    },
+    "facing=west,waterlogged=false": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "snow_update:block/frosted_leaves_spikes",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

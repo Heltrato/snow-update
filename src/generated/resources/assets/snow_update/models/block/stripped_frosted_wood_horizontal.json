@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "snow_update:block/frosted_log",
+    "end": "snow_update:block/stripped_frosted_log",
     "side": "snow_update:block/stripped_frosted_log"
   }
 }

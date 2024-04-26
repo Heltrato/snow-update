@@ -1,5 +1,23 @@
 {
   "values": [
-    "snow_update:frosted_planks_stairs"
+    "snow_update:blue_ice_bricks_stairs",
+    "snow_update:cobbled_frigidite_stairs",
+    "snow_update:frigidite_stairs",
+    "snow_update:frigidite_bricks_stairs",
+    "snow_update:frosted_frigidite_stairs",
+    "snow_update:ice_bricks_stairs",
+    "snow_update:koristone_stairs",
+    "snow_update:koristone_bricks_stairs",
+    "snow_update:packed_ice_bricks_stairs",
+    "snow_update:packed_snow_stairs",
+    "snow_update:packed_snow_bricks_stairs",
+    "snow_update:snowy_cobblestone_stairs",
+    "snow_update:snowy_stone_bricks_stairs",
+    "snow_update:frosted_planks_stairs",
+    "snow_update:howlite_stairs",
+    "snow_update:howlite_bricks_stairs",
+    "snow_update:howlite_tiles_stairs",
+    "snow_update:polished_howlite_stairs",
+    "snow_update:blue_ice_bricks_2_staris"
   ]
 }

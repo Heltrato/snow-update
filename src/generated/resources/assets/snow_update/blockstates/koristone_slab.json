@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snow_update:block/koristone_slab"
+    },
+    "type=double": {
+      "model": "snow_update:block/koristone"
+    },
+    "type=top": {
+      "model": "snow_update:block/koristone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "snow_update:block/blue_ice_bricks2",
+    "side": "snow_update:block/blue_ice_bricks2",
+    "top": "snow_update:block/blue_ice_bricks2"
+  }
+}

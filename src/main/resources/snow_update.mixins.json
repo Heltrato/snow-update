@@ -1,0 +1,25 @@
+{
+    "required": true,
+    "package": "net.technic.snow_update.mixin",
+    "compabilityLevel": "JAVA_17",
+    "minVersion": "0.8.5",
+    "refmap": "snow_update.refmap.json",
+    "mixins": [
+        "MixinBiomeSource",
+        "MixinBuiltInRegistries",
+        "MixinMultiNoiseBiomeSource",
+        "MixinNoiseGeneratorSettings",
+        "MixinParameterList",
+        "MixinPrimaryLevelData",
+        "MixinTheEndBiomeSource"
+    ],
+    "client": [
+        "MixinWorldOpenFlows"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "audit": true,
+    "verbose": true
+
+}

@@ -10,6 +10,7 @@ import net.technic.snow_update.SnowUpdate;
 import net.technic.snow_update.entity.IceChunkEntity;
 import net.technic.snow_update.entity.JuvenileYetiEntity;
 import net.technic.snow_update.entity.SnowBallEntity;
+import net.technic.snow_update.entity.SnowUpdateBoats;
 import net.technic.snow_update.entity.TitanYetiEntity;
 
 public class SnowEntityRegistry {
@@ -36,6 +37,13 @@ public class SnowEntityRegistry {
         .setCustomClientFactory((spawnEntity, level) -> new IceChunkEntity(level))
         .build("ice_chunk"));
 
+    public static final RegistryObject<EntityType<SnowUpdateBoats>> FROSTWOOD_BOAT = ENTITY_TYPES.register("frostwood_boat", ()-> EntityType.Builder.<SnowUpdateBoats>of(SnowUpdateBoats::new, MobCategory.MISC)
+        .sized(1.375F, 0.5625F)
+        .build("frostwood_boat"));
+        
+    public static final RegistryObject<EntityType<SnowUpdateBoats>> FROSTWOOD_CHESTBOAT = ENTITY_TYPES.register("frostwood_chestboat", ()-> EntityType.Builder.<SnowUpdateBoats>of(SnowUpdateBoats::new, MobCategory.MISC)
+        .sized(1.375F, 0.5625F)
+        .build("frostwood_boat"));
 
     public static void register(IEventBus pEventBus){
         ENTITY_TYPES.register(pEventBus);

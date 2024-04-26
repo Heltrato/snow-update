@@ -14,11 +14,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.technic.snow_update.SnowUpdate;
 import net.technic.snow_update.Items.IceWand;
+import net.technic.snow_update.Items.SnowBoatItem;
 import net.technic.snow_update.Items.SnowUpdateArmorMaterials;
 import net.technic.snow_update.Items.SnowUpdateFoodProperties;
 import net.technic.snow_update.Items.SnowUpdateToolTiers;
 import net.technic.snow_update.Items.YetiFurArmor;
 import net.technic.snow_update.Items.YetiHornItem;
+import net.technic.snow_update.entity.SnowUpdateBoats;
 
 public class SnowItemsRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SnowUpdate.MOD_ID);
@@ -72,6 +74,11 @@ public class SnowItemsRegistry {
     public static final RegistryObject<Item> GLACIER_LEGGINGS = ITEMS.register("glacier_leggings", ()-> new ArmorItem(SnowUpdateArmorMaterials.GLACIER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> GLACIER_BOOTS = ITEMS.register("glacier_boots", ()-> new ArmorItem(SnowUpdateArmorMaterials.GLACIER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> FROSTWOOD_BOAT = ITEMS.register("frostwood_boat", ()-> new SnowBoatItem(false, SnowUpdateBoats.Type.FROSTWOOD, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> FROSTWOOD_CHESTBOAT = ITEMS.register("frostwood_chest_boat", ()-> new SnowBoatItem(true, SnowUpdateBoats.Type.FROSTWOOD, new Item.Properties().stacksTo(1)));
+
 
     public static void register(IEventBus pEventBus){
         ITEMS.register(pEventBus);

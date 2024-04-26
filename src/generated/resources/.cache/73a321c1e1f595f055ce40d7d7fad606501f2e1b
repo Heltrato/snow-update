@@ -1,6 +1,7 @@
-// 1.20.2	2024-04-02T22:03:39.5172795	Tags for minecraft:block mod id snow_update
-23724570fb7f255844ae8f23f25696df9716b5e8 data/minecraft/tags/blocks/fences.json
+// 1.20.2	2024-04-18T15:02:06.0411706	Tags for minecraft:block mod id snow_update
+abdc2e40e02fa3b0b79083d3ed4530c56585aca0 data/minecraft/tags/blocks/fences.json
 272e39496025b309a324ac9113b7eb1a6599675c data/minecraft/tags/blocks/logs_that_burn.json
 d70d6be62f2907630b45e3fe20076ffcb18fcc1c data/minecraft/tags/blocks/planks.json
 f820da7e46a795ff865e1a2820ae2270b0fb296a data/minecraft/tags/blocks/snow_layer_cannot_survive_on.json
-df1ac650fd4f5c042484463b68a9845f41e7bff4 data/minecraft/tags/blocks/stairs.json
+e20a4fb0eeb0d4cb36a098d4874e1b0529a1d037 data/minecraft/tags/blocks/stairs.json
+6d8af2eb4b478a870032be670af120c51bf45284 data/minecraft/tags/blocks/walls.json
