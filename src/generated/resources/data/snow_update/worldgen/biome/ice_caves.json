@@ -6,9 +6,15 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.4,
+  "downfall": 1.0,
   "effects": {
     "fog_color": 12638463,
+    "particle": {
+      "options": {
+        "type": "minecraft:snowflake"
+      },
+      "probability": 0.00625
+    },
     "sky_color": 7907327,
     "water_color": 4159204,
     "water_fog_color": 329011
@@ -20,8 +26,7 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "minecraft:large_dripstone"
+      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:monster_room",
@@ -40,15 +45,9 @@
       "minecraft:ore_diorite_lower",
       "minecraft:ore_andesite_upper",
       "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_tuff"
     ],
-    [
-      "minecraft:dripstone_cluster",
-      "minecraft:pointed_dripstone"
-    ],
+    [],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava",
@@ -136,5 +135,6 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.8
+  "temperature": 0.0,
+  "temperature_modifier": "frozen"
 }

@@ -23,6 +23,7 @@ public class SnowUpdateOverworldRegion extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<ParameterPoint, ResourceKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaBiomes -> {
             modifiedVanillaBiomes.replaceBiome(Biomes.DRIPSTONE_CAVES, SnowUpdateBiomes.ICE_CAVES);
+            modifiedVanillaBiomes.replaceBiome(Biomes.LUSH_CAVES, SnowUpdateBiomes.ICE_CAVES);
         });
     }
 

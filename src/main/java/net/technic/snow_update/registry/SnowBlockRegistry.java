@@ -42,9 +42,6 @@ import net.technic.snow_update.worldgen.tree.FrostwoodTreeGrower;
 public class SnowBlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SnowUpdate.MOD_ID);
     
-    public static final RegistryObject<Block> ICE_STALACTITE_BLOCK = registerBlock("ice_stalactite_block", 
-    ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ICE).sound(SoundType.GLASS).noLootTable()));
-
     public static final RegistryObject<Block> POINTED_ICE_STALACTITE = registerBlock("pointed_ice_stalactite", 
     ()-> new PointedIceStalactite(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().sound(SoundType.POINTED_DRIPSTONE).randomTicks()
     .dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ).noLootTable()));

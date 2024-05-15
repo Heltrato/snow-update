@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "ice_stalactite_thickness=base,vertical_direction=down,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_base"
+    },
+    "ice_stalactite_thickness=base,vertical_direction=down,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_base"
+    },
+    "ice_stalactite_thickness=base,vertical_direction=up,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_base"
+    },
+    "ice_stalactite_thickness=base,vertical_direction=up,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_base"
+    },
+    "ice_stalactite_thickness=frustum,vertical_direction=down,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_frustum"
+    },
+    "ice_stalactite_thickness=frustum,vertical_direction=down,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_frustum"
+    },
+    "ice_stalactite_thickness=frustum,vertical_direction=up,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_frustum"
+    },
+    "ice_stalactite_thickness=frustum,vertical_direction=up,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_frustum"
+    },
+    "ice_stalactite_thickness=middle,vertical_direction=down,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_middle"
+    },
+    "ice_stalactite_thickness=middle,vertical_direction=down,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_middle"
+    },
+    "ice_stalactite_thickness=middle,vertical_direction=up,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_middle"
+    },
+    "ice_stalactite_thickness=middle,vertical_direction=up,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_middle"
+    },
+    "ice_stalactite_thickness=tip,vertical_direction=down,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip"
+    },
+    "ice_stalactite_thickness=tip,vertical_direction=down,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip"
+    },
+    "ice_stalactite_thickness=tip,vertical_direction=up,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip"
+    },
+    "ice_stalactite_thickness=tip,vertical_direction=up,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip"
+    },
+    "ice_stalactite_thickness=tip_merge,vertical_direction=down,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip_merge"
+    },
+    "ice_stalactite_thickness=tip_merge,vertical_direction=down,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip_merge"
+    },
+    "ice_stalactite_thickness=tip_merge,vertical_direction=up,waterlogged=false": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip_merge"
+    },
+    "ice_stalactite_thickness=tip_merge,vertical_direction=up,waterlogged=true": {
+      "model": "snow_update:block/pointed_ice_stalactite_tip_merge"
+    }
+  }
+}

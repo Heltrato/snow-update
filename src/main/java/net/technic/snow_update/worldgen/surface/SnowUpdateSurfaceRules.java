@@ -15,7 +15,8 @@ public class SnowUpdateSurfaceRules {
         return SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(SnowUpdateBiomes.ICE_CAVES), SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, HOWLITE)), 
         SurfaceRules.ifTrue(SurfaceRules.isBiome(SnowUpdateBiomes.ICE_CAVES), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, HOWLITE)), 
         SurfaceRules.ifTrue(SurfaceRules.isBiome(SnowUpdateBiomes.ICE_CAVES), SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, HOWLITE)),
-        SurfaceRules.ifTrue(SurfaceRules.isBiome(SnowUpdateBiomes.ICE_CAVES), SurfaceRules.ifTrue(SurfaceRules.UNDER_CEILING, HOWLITE)));
+        SurfaceRules.ifTrue(SurfaceRules.isBiome(SnowUpdateBiomes.ICE_CAVES), SurfaceRules.ifTrue(SurfaceRules.UNDER_CEILING, HOWLITE)),
+        SurfaceRules.ifTrue(SurfaceRules.isBiome((SnowUpdateBiomes.ICE_CAVES)), HOWLITE));
     }
     
     private static RuleSource makeStateRule(@NotNull Block pBlock) {

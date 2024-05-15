@@ -26,6 +26,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.technic.snow_update.SnowUpdate;
 import net.technic.snow_update.blocks.GlacierIce;
 import net.technic.snow_update.blocks.KeyStone;
+import net.technic.snow_update.blocks.properties.SnowUpdateBlockProperties;
 import net.technic.snow_update.registry.SnowBlockRegistry;
 
 public class SnowUpdateBlockStateProvider extends BlockStateProvider{
@@ -87,6 +88,8 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
         blockAndItem(SnowBlockRegistry.COBBLED_FRIGIDITE);
         blockAndItem(SnowBlockRegistry.ICE_SPIKE_BLOCK);
         blockAndItem(SnowBlockRegistry.ICE_BRICKS);
+        dripstone(SnowBlockRegistry.POINTED_ICE_STALACTITE);
+        
 
         fenceBlock(((FenceBlock)SnowBlockRegistry.FROSTED_WOOD_FENCE.get()), blockTexture(SnowBlockRegistry.FROSTED_PLANKS.get()));
 
@@ -256,6 +259,28 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
     private void leavesBlock(@NotNull Block block) {
         simpleBlockWithItem(block, models().singleTexture(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation("minecraft:block/leaves"), "all", 
         blockTexture(block)).renderType("cutout"));
+    }
+
+    private void dripstone(RegistryObject<Block> pObject) {
+        Block block = pObject.get();
+        ResourceLocation resourceLocation = new ResourceLocation(SnowUpdate.MOD_ID, ForgeRegistries.BLOCKS.getKey(block).getPath());
+        itemModels().withExistingParent(resourceLocation.getPath(), mcLoc("item/generated")).texture("layer0", resourceLocation.withPrefix("block/").withSuffix("_tip"));
+        getVariantBuilder(block).forAllStates(pState -> {
+            switch (pState.getValue(SnowUpdateBlockProperties.ICE_STALACTITE_THICKNESS)) {
+                case BASE:
+                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_base", blockTexture(block).withSuffix("_base")).renderType("cutout")).build();
+                case FRUSTUM:
+                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_frustum", blockTexture(block).withSuffix("_frustum")).renderType("cutout")).build();
+                case MIDDLE: 
+                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_middle", blockTexture(block).withSuffix("_middle")).renderType("cutout")).build();
+                case TIP:
+                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip", blockTexture(block).withSuffix("_tip")).renderType("cutout")).build();
+                case TIP_MERGE:
+                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip_merge", blockTexture(block).withSuffix("_tip_merge")).renderType("cutout")).build();
+                default:
+                    return null;
+            }
+        });
     }
 
     private void createColumnBlock(RegistryObject<Block> pObject) {

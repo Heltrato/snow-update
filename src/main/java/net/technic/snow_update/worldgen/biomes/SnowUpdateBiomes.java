@@ -1,11 +1,13 @@
 package net.technic.snow_update.worldgen.biomes;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.level.biome.AmbientParticleSettings;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
@@ -35,19 +37,18 @@ public class SnowUpdateBiomes {
         globalOverworldGeneration(generationbBuilder);
         BiomeDefaultFeatures.addBlueIce(generationbBuilder);
         BiomeDefaultFeatures.addFrozenSprings(generationbBuilder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(generationbBuilder);
-        BiomeDefaultFeatures.addDripstone(generationbBuilder);
         return new Biome.BiomeBuilder()
             .hasPrecipitation(true)
-            .temperature(0.8F)
-            .downfall(0.4F)
+            .temperature(0.0F)
+            .downfall(1F)
             .mobSpawnSettings(spawnBuilder.build())
-            .temperatureAdjustment(Biome.TemperatureModifier.NONE)
+            .temperatureAdjustment(Biome.TemperatureModifier.FROZEN)
             .specialEffects(new BiomeSpecialEffects.Builder()
                 .waterColor(0x3f76e4)
                 .waterFogColor(0x050533)
                 .fogColor(0xc0d8ff)
                 .skyColor(calculateSkyColor(0.8f))
+                .ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.0225f))
                 .build()) 
             .generationSettings(generationbBuilder.build()).build();
     }

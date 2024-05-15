@@ -2,8 +2,14 @@
   "feature": "snow_update:ice_stalactite",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 70
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 96,
+          "min_inclusive": 48
+        }
+      }
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +19,10 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 50
+          "absolute": 256
         },
         "min_inclusive": {
-          "above_bottom": 6
+          "above_bottom": 0
         }
       }
     },

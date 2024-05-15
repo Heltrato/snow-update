@@ -33,106 +33,106 @@ public class IceStalactiteFeature extends Feature<DripstoneClusterConfiguration>
      }
   
    public boolean place(FeaturePlaceContext<DripstoneClusterConfiguration> p_159605_) {
-        WorldGenLevel worldgenlevel = p_159605_.level();
-        BlockPos blockpos = p_159605_.origin();
-        DripstoneClusterConfiguration dripstoneclusterconfiguration = p_159605_.config();
-        RandomSource randomsource = p_159605_.random();
-        if (!isEmptyOrWater(worldgenlevel, blockpos)) {
-           return false;
-        } else {
-           int i = dripstoneclusterconfiguration.height.sample(randomsource);
-           float f = dripstoneclusterconfiguration.wetness.sample(randomsource);
-           float f1 = dripstoneclusterconfiguration.density.sample(randomsource);
-           int j = dripstoneclusterconfiguration.radius.sample(randomsource);
-           int k = dripstoneclusterconfiguration.radius.sample(randomsource);
-  
-           for(int l = -j; l <= j; ++l) {
-              for(int i1 = -k; i1 <= k; ++i1) {
-                 double d0 = this.getChanceOfStalagmiteOrStalactite(j, k, l, i1, dripstoneclusterconfiguration);
-                 BlockPos blockpos1 = blockpos.offset(l, 0, i1);
-                 this.placeColumn(worldgenlevel, randomsource, blockpos1, l, i1, f, d0, i, f1, dripstoneclusterconfiguration);
-              }
-           }
-  
-           return true;
-        }
-     }
+         WorldGenLevel worldgenlevel = p_159605_.level();
+         BlockPos blockpos = p_159605_.origin();
+         DripstoneClusterConfiguration dripstoneclusterconfiguration = p_159605_.config();
+         RandomSource randomsource = p_159605_.random();
+         if (!isEmptyOrWater(worldgenlevel, blockpos)) {
+            return false;
+         } else {
+            int i = dripstoneclusterconfiguration.height.sample(randomsource);
+            float f = dripstoneclusterconfiguration.wetness.sample(randomsource);
+            float f1 = dripstoneclusterconfiguration.density.sample(randomsource);
+            int j = dripstoneclusterconfiguration.radius.sample(randomsource);
+            int k = dripstoneclusterconfiguration.radius.sample(randomsource);
+   
+            for(int l = -j; l <= j; ++l) {
+               for(int i1 = -k; i1 <= k; ++i1) {
+                  double d0 = this.getChanceOfStalagmiteOrStalactite(j, k, l, i1, dripstoneclusterconfiguration);
+                  BlockPos blockpos1 = blockpos.offset(l, 0, i1);
+                  this.placeColumn(worldgenlevel, randomsource, blockpos1, l, i1, f, d0, i, f1, dripstoneclusterconfiguration);
+               }
+            }
+   
+            return true;
+         }
+      }
   
    private void placeColumn(WorldGenLevel p_225016_, RandomSource p_225017_, BlockPos p_225018_, int p_225019_, int p_225020_, float p_225021_, double p_225022_, int p_225023_, float p_225024_, DripstoneClusterConfiguration p_225025_) {
-      Optional<Column> optional = Column.scan(p_225016_, p_225018_, p_225025_.floorToCeilingSearchRange, DripstoneUtils::isEmptyOrWater, DripstoneUtils::isNeitherEmptyNorWater);
-        if (optional.isPresent()) {
-           OptionalInt optionalint = optional.get().getCeiling();
-           OptionalInt optionalint1 = optional.get().getFloor();
-           if (optionalint.isPresent() || optionalint1.isPresent()) {
-              boolean flag = p_225017_.nextFloat() < p_225021_;
-              Column column;
-              if (flag && optionalint1.isPresent() && this.canPlacePool(p_225016_, p_225018_.atY(optionalint1.getAsInt()))) {
-                 int i = optionalint1.getAsInt();
-                 column = optional.get().withFloor(OptionalInt.of(i - 1));
-                 p_225016_.setBlock(p_225018_.atY(i), Blocks.ICE.defaultBlockState(), 2);
-              } else {
-                 column = optional.get();
-              }
-  
-              OptionalInt optionalint2 = column.getFloor();
-              boolean flag1 = p_225017_.nextDouble() < p_225022_;
-              int j;
-              if (optionalint.isPresent() && flag1 && !this.isLava(p_225016_, p_225018_.atY(optionalint.getAsInt()))) {
-                 int k = p_225025_.dripstoneBlockLayerThickness.sample(p_225017_);
-                 this.replaceBlocksWithDripstoneBlocks(p_225016_, p_225018_.atY(optionalint.getAsInt()), k, Direction.UP);
-                 int l;
-                 if (optionalint2.isPresent()) {
-                    l = Math.min(p_225023_, optionalint.getAsInt() - optionalint2.getAsInt());
-                 } else {
-                    l = p_225023_;
-                 }
-  
-                 j = this.getDripstoneHeight(p_225017_, p_225019_, p_225020_, p_225024_, l, p_225025_);
-              } else {
-                 j = 0;
-              }
-  
-              boolean flag2 = p_225017_.nextDouble() < p_225022_;
-              int i3;
-              if (optionalint2.isPresent() && flag2 && !this.isLava(p_225016_, p_225018_.atY(optionalint2.getAsInt()))) {
-                 int i1 = p_225025_.dripstoneBlockLayerThickness.sample(p_225017_);
-                 this.replaceBlocksWithDripstoneBlocks(p_225016_, p_225018_.atY(optionalint2.getAsInt()), i1, Direction.DOWN);
-                 if (optionalint.isPresent()) {
-                    i3 = Math.max(0, j + Mth.randomBetweenInclusive(p_225017_, -p_225025_.maxStalagmiteStalactiteHeightDiff, p_225025_.maxStalagmiteStalactiteHeightDiff));
-                 } else {
-                    i3 = this.getDripstoneHeight(p_225017_, p_225019_, p_225020_, p_225024_, p_225023_, p_225025_);
-                 }
-              } else {
-                 i3 = 0;
-              }
-  
-              int j1;
-              int j3;
-              if (optionalint.isPresent() && optionalint2.isPresent() && optionalint.getAsInt() - j <= optionalint2.getAsInt() + i3) {
-                 int k1 = optionalint2.getAsInt();
-                 int l1 = optionalint.getAsInt();
-                 int i2 = Math.max(l1 - j, k1 + 1);
-                 int j2 = Math.min(k1 + i3, l1 - 1);
-                 int k2 = Mth.randomBetweenInclusive(p_225017_, i2, j2 + 1);
-                 int l2 = k2 - 1;
-                 j3 = l1 - k2;
-                 j1 = l2 - k1;
-              } else {
-                 j3 = j;
-                 j1 = i3;
-              }
-  
-              boolean flag3 = p_225017_.nextBoolean() && j3 > 0 && j1 > 0 && column.getHeight().isPresent() && j3 + j1 == column.getHeight().getAsInt();
-              if (optionalint.isPresent()) {
-                 growPointedDripstone(p_225016_, p_225018_.atY(optionalint.getAsInt() - 1), Direction.DOWN, j3, flag3);
-              }
-  
-              if (optionalint2.isPresent()) {
-                 growPointedDripstone(p_225016_, p_225018_.atY(optionalint2.getAsInt() + 1), Direction.UP, j1, flag3);
-              }
-  
-           }
-        }
+         Optional<Column> optional = Column.scan(p_225016_, p_225018_, p_225025_.floorToCeilingSearchRange, DripstoneUtils::isEmptyOrWater, DripstoneUtils::isNeitherEmptyNorWater);
+         if (optional.isPresent()) {
+            OptionalInt optionalint = optional.get().getCeiling();
+            OptionalInt optionalint1 = optional.get().getFloor();
+            if (optionalint.isPresent() || optionalint1.isPresent()) {
+               boolean flag = p_225017_.nextFloat() < p_225021_;
+               Column column;
+               if (flag && optionalint1.isPresent() && this.canPlacePool(p_225016_, p_225018_.atY(optionalint1.getAsInt()))) {
+                  int i = optionalint1.getAsInt();
+                  column = optional.get().withFloor(OptionalInt.of(i - 1));
+                  p_225016_.setBlock(p_225018_.atY(i), Blocks.ICE.defaultBlockState(), 2);
+               } else {
+                  column = optional.get();
+               }
+   
+               OptionalInt optionalint2 = column.getFloor();
+               boolean flag1 = p_225017_.nextDouble() < p_225022_;
+               int j;
+               if (optionalint.isPresent() && flag1 && !this.isLava(p_225016_, p_225018_.atY(optionalint.getAsInt()))) {
+                  int k = p_225025_.dripstoneBlockLayerThickness.sample(p_225017_);
+                  this.replaceBlocksWithDripstoneBlocks(p_225016_, p_225018_.atY(optionalint.getAsInt()), k, Direction.UP);
+                  int l;
+                  if (optionalint2.isPresent()) {
+                     l = Math.min(p_225023_, optionalint.getAsInt() - optionalint2.getAsInt());
+                  } else {
+                     l = p_225023_;
+                  }
+   
+                  j = this.getDripstoneHeight(p_225017_, p_225019_, p_225020_, p_225024_, l, p_225025_);
+               } else {
+                  j = 0;
+               }
+   
+               boolean flag2 = p_225017_.nextDouble() < p_225022_;
+               int i3;
+               if (optionalint2.isPresent() && flag2 && !this.isLava(p_225016_, p_225018_.atY(optionalint2.getAsInt()))) {
+                  int i1 = p_225025_.dripstoneBlockLayerThickness.sample(p_225017_);
+                  this.replaceBlocksWithDripstoneBlocks(p_225016_, p_225018_.atY(optionalint2.getAsInt()), i1, Direction.DOWN);
+                  if (optionalint.isPresent()) {
+                     i3 = Math.max(0, j + Mth.randomBetweenInclusive(p_225017_, -p_225025_.maxStalagmiteStalactiteHeightDiff, p_225025_.maxStalagmiteStalactiteHeightDiff));
+                  } else {
+                     i3 = this.getDripstoneHeight(p_225017_, p_225019_, p_225020_, p_225024_, p_225023_, p_225025_);
+                  }
+               } else {
+                  i3 = 0;
+               }
+   
+               int j1;
+               int j3;
+               if (optionalint.isPresent() && optionalint2.isPresent() && optionalint.getAsInt() - j <= optionalint2.getAsInt() + i3) {
+                  int k1 = optionalint2.getAsInt();
+                  int l1 = optionalint.getAsInt();
+                  int i2 = Math.max(l1 - j, k1 + 1);
+                  int j2 = Math.min(k1 + i3, l1 - 1);
+                  int k2 = Mth.randomBetweenInclusive(p_225017_, i2, j2 + 1);
+                  int l2 = k2 - 1;
+                  j3 = l1 - k2;
+                  j1 = l2 - k1;
+               } else {
+                  j3 = j;
+                  j1 = i3;
+               }
+   
+               boolean flag3 = p_225017_.nextBoolean() && j3 > 0 && j1 > 0 && column.getHeight().isPresent() && j3 + j1 == column.getHeight().getAsInt();
+               if (optionalint.isPresent()) {
+                  growPointedDripstone(p_225016_, p_225018_.atY(optionalint.getAsInt() - 1), Direction.DOWN, j3, flag3);
+               }
+   
+               if (optionalint2.isPresent()) {
+                  growPointedDripstone(p_225016_, p_225018_.atY(optionalint2.getAsInt() + 1), Direction.UP, j1, flag3);
+               }
+   
+            }
+         }
    }
 
    protected static boolean isEmptyOrWater(LevelAccessor pLevel, BlockPos pPos) {
@@ -155,7 +155,7 @@ public class IceStalactiteFeature extends Feature<DripstoneClusterConfiguration>
   
    private boolean canPlacePool(WorldGenLevel p_159620_, BlockPos p_159621_) {
         BlockState blockstate = p_159620_.getBlockState(p_159621_);
-        if (!blockstate.is(Blocks.ICE) && !blockstate.is(SnowBlockRegistry.ICE_STALACTITE_BLOCK.get()) && !blockstate.is(SnowBlockRegistry.POINTED_ICE_STALACTITE.get())) {
+        if (!blockstate.is(Blocks.ICE) && !blockstate.is(SnowBlockRegistry.ICE_SPIKE_BLOCK.get()) && !blockstate.is(SnowBlockRegistry.POINTED_ICE_STALACTITE.get())) {
            if (p_159620_.getBlockState(p_159621_.above()).getBlock() == Blocks.ICE) {
               return false;
            } else {
@@ -227,7 +227,7 @@ public class IceStalactiteFeature extends Feature<DripstoneClusterConfiguration>
    }
 
    public static boolean isDripstoneBase(BlockState pState) {
-        return pState.is(Blocks.DRIPSTONE_BLOCK) || pState.is(BlockTags.DRIPSTONE_REPLACEABLE);
+        return pState.is(Blocks.DRIPSTONE_BLOCK) || pState.is(BlockTags.DRIPSTONE_REPLACEABLE) || pState.is(SnowBlockRegistry.ICE_SPIKE_BLOCK.get());
    }
   
    private double getChanceOfStalagmiteOrStalactite(int p_159577_, int p_159578_, int p_159579_, int p_159580_, DripstoneClusterConfiguration p_159581_) {
@@ -244,7 +244,7 @@ public class IceStalactiteFeature extends Feature<DripstoneClusterConfiguration>
    public static boolean placeIceSpikeBlockIfPossible(LevelAccessor p_190854_, BlockPos p_190855_) {
       BlockState blockstate = p_190854_.getBlockState(p_190855_);
       if (blockstate.is(BlockTags.DRIPSTONE_REPLACEABLE)) {
-          p_190854_.setBlock(p_190855_, SnowBlockRegistry.ICE_STALACTITE_BLOCK.get().defaultBlockState(), 2);
+          p_190854_.setBlock(p_190855_, SnowBlockRegistry.ICE_SPIKE_BLOCK.get().defaultBlockState(), 2);
           return true;
       } else {
           return false;

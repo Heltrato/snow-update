@@ -73,6 +73,7 @@ public class PointedIceStalactite extends Block implements Fallable, SimpleWater
         .setValue(TIP_DIRECTION, Direction.UP)
         .setValue(THICKNESS, IceStalactiteThickness.TIP)
         .setValue(WATERLOGGED, Boolean.valueOf(false)));
+        
     }
 
     @Override
