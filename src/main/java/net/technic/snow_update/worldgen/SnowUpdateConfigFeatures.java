@@ -43,6 +43,12 @@ public class SnowUpdateConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ICE_PATCH_CEILING = registerKey("ice_patch_ceiling");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SNOW_PATCH_FLOOR = registerKey("snow_patch_floor");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SNOW_PATCH_CEILING = registerKey("snow_patch_ceiling");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> POWDER_SNOW_PATCH_FLOOR = registerKey("powder_snow_patch_floor");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> POWDER_SNOW_PATCH_CEILING = registerKey("powder_snow_patch_ceiling");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> KORISTONE_PATCH_FLOOR = registerKey("koristone_patch_floor");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> KORISTONE_PATCH_CEILING = registerKey("koristone_patch_ceiling");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FRIGIDITE_PATCH_FLOOR = registerKey("frigidite_patch_floor");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FRIGIDITE_PATCH_CEILING = registerKey("frigidite_patch_ceiling");
     
     public static void boostrap(BootstapContext<ConfiguredFeature<?, ?>> pContext){
         register(pContext, ICE_STALACTITE, SnowFeaturesRegistry.ICE_STALACTITE_FEATURE.get(), 
@@ -79,12 +85,36 @@ public class SnowUpdateConfigFeatures {
             UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
 
         register(pContext, SNOW_PATCH_FLOOR, SnowFeaturesRegistry.SNOW_PATCH_FLOOR_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
-            BlockStateProvider.simple(SnowBlockRegistry.ICE_SPIKE_BLOCK.get()), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            BlockStateProvider.simple(Blocks.SNOW_BLOCK), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
             UniformInt.of(1, 1), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
 
         register(pContext, SNOW_PATCH_CEILING, SnowFeaturesRegistry.SNOW_PATCH_CEILING_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
-            BlockStateProvider.simple(SnowBlockRegistry.ICE_SPIKE_BLOCK.get()), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            BlockStateProvider.simple(Blocks.SNOW_BLOCK), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
             UniformInt.of(1, 1), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
+
+        register(pContext, POWDER_SNOW_PATCH_FLOOR, SnowFeaturesRegistry.SNOW_PATCH_FLOOR_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
+            BlockStateProvider.simple(Blocks.POWDER_SNOW), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
+
+        register(pContext, POWDER_SNOW_PATCH_CEILING, SnowFeaturesRegistry.SNOW_PATCH_CEILING_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
+            BlockStateProvider.simple(Blocks.POWDER_SNOW), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
+        
+        register(pContext, KORISTONE_PATCH_FLOOR, SnowFeaturesRegistry.KORISTONE_PATCH_FLOOR_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
+            BlockStateProvider.simple(SnowBlockRegistry.KORISTONE.get()), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
+
+        register(pContext, KORISTONE_PATCH_CEILING, SnowFeaturesRegistry.KORISTONE_PATCH_CEILING_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
+            BlockStateProvider.simple(SnowBlockRegistry.KORISTONE.get()), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
+
+        register(pContext, FRIGIDITE_PATCH_FLOOR, SnowFeaturesRegistry.FRIGIDITE_PATCH_FLOOR_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
+            BlockStateProvider.simple(SnowBlockRegistry.FRIGIDITE.get()), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
+
+        register(pContext, FRIGIDITE_PATCH_CEILING, SnowFeaturesRegistry.FRIGIDITE_PATCH_CEILING_FEATURE.get(), new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, 
+            BlockStateProvider.simple(SnowBlockRegistry.FRIGIDITE.get()), PlacementUtils.inlinePlaced(pContext.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ICE_STALACTITE)), CaveSurface.FLOOR, 
+            UniformInt.of(1, 2), 0, 5, 0.08f, UniformInt.of(4, 7), 0.3f));
         
     }
 

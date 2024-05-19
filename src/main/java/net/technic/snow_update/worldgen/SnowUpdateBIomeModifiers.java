@@ -23,6 +23,11 @@ public class SnowUpdateBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_ICE_PATCH_CEILING = registerKey("add_ice_patch_ceiling");
     public static final ResourceKey<BiomeModifier> ADD_SNOW_PATCH_FLOOR = registerKey("add_snow_patch_floor");
     public static final ResourceKey<BiomeModifier> ADD_SNOW_PATCH_CEILING = registerKey("add_snow_patch_ceiling");
+    public static final ResourceKey<BiomeModifier> ADD_POWDER_SNOW_PATCH = registerKey("add_powder_snow_patch");
+    public static final ResourceKey<BiomeModifier> ADD_KORISTONE_PATCH = registerKey("add_koristone_patch");
+    public static final ResourceKey<BiomeModifier> ADD_FRIGIDITE_PATCH = registerKey("add_frigidite_patch");
+    
+
 
     public static void bootstrap(BootstapContext<BiomeModifier> pContext) {
         var placedFeatures = pContext.lookup(Registries.PLACED_FEATURE);
@@ -54,6 +59,19 @@ public class SnowUpdateBiomeModifiers {
 
         pContext.register(ADD_SNOW_PATCH_CEILING, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(SnowUpdateBiomes.ICE_CAVES)), 
         HolderSet.direct(placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.SNOW_PATCH_CEILING_PLACED)), Decoration.UNDERGROUND_DECORATION));
+
+        pContext.register(ADD_POWDER_SNOW_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(SnowUpdateBiomes.ICE_CAVES)), 
+        HolderSet.direct(placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.POWDER_SNOW_PATCH_FLOOR_PLACED), 
+        placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.POWDER_SNOW_PATCH_CEILING_PLACED)), Decoration.UNDERGROUND_DECORATION));
+
+        pContext.register(ADD_KORISTONE_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(SnowUpdateBiomes.ICE_CAVES)), 
+        HolderSet.direct(placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.KORISTONE_PATCH_FLOOR_PLACED), 
+        placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.KORISTONE_PATCH_CEILING_PLACED)), Decoration.UNDERGROUND_DECORATION));
+
+        pContext.register(ADD_FRIGIDITE_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(SnowUpdateBiomes.ICE_CAVES)), 
+        HolderSet.direct(placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.FRIGIDITE_PATCH_FLOOR_PLACED), 
+        placedFeatures.getOrThrow(SnowUpdatePlacedFeatures.FRIGIDITE_PATCH_CEILING_PLACED)), Decoration.UNDERGROUND_DECORATION));
+
         
     }
 

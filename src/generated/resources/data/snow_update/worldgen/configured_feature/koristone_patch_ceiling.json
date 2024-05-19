@@ -1,10 +1,10 @@
 {
-  "type": "snow_update:snow_patch_floor_feature",
+  "type": "snow_update:koristone_patch_ceiling_feature",
   "config": {
     "depth": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 1,
+        "max_inclusive": 2,
         "min_inclusive": 1
       }
     },
@@ -13,7 +13,7 @@
     "ground_state": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:snow_block"
+        "Name": "snow_update:koristone"
       }
     },
     "replaceable": "#minecraft:moss_replaceable",

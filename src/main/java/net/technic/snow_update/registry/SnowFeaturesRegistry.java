@@ -35,6 +35,24 @@ public class SnowFeaturesRegistry {
     public static final RegistryObject<VegetationPatchFeature> SNOW_PATCH_CEILING_FEATURE = FEATURES.register("snow_patch_ceiling_feature",
     ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
 
+    public static final RegistryObject<VegetationPatchFeature> POWDER_SNOW_PATCH_FLOOR_FEATURE = FEATURES.register("powder_snow_patch_floor_feature",
+    ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
+
+    public static final RegistryObject<VegetationPatchFeature> POWDER_SNOW_PATCH_CEILING_FEATURE = FEATURES.register("powder_snow_patch_ceiling_feature",
+    ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
+
+    public static final RegistryObject<VegetationPatchFeature> KORISTONE_PATCH_FLOOR_FEATURE = FEATURES.register("koristone_patch_floor_feature",
+    ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
+
+    public static final RegistryObject<VegetationPatchFeature> KORISTONE_PATCH_CEILING_FEATURE = FEATURES.register("koristone_patch_ceiling_feature",
+    ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
+
+    public static final RegistryObject<VegetationPatchFeature> FRIGIDITE_PATCH_FLOOR_FEATURE = FEATURES.register("frigidite_patch_floor_feature",
+    ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
+
+    public static final RegistryObject<VegetationPatchFeature> FRIGIDITE_PATCH_CEILING_FEATURE = FEATURES.register("frigidite_patch_ceiling_feature",
+    ()-> new VegetationPatchFeature(VegetationPatchConfiguration.CODEC));
+
 
     public static void register(IEventBus pBus){
         FEATURES.register(pBus);
