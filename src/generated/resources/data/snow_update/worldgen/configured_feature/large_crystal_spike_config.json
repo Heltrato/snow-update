@@ -1,0 +1,19 @@
+{
+  "type": "snow_update:large_crystal_ice_spike",
+  "config": {
+    "cluster_state": {
+      "Name": "minecraft:cave_air"
+    },
+    "crystal_direction": "ceiling",
+    "crystal_state": {
+      "Name": "snow_update:ice_spike_block"
+    },
+    "xz_radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 3,
+        "min_inclusive": 1
+      }
+    }
+  }
+}

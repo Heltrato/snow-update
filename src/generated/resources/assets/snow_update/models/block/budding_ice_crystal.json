@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "snow_update:block/budding_ice_crystal"
+  }
+}

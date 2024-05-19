@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "snow_update:ice_caves",
+  "features": [
+    "snow_update:large_ice_spike_placed",
+    "snow_update:large_ice_crystal_spike_placed"
+  ],
+  "step": "underground_decoration"
+}

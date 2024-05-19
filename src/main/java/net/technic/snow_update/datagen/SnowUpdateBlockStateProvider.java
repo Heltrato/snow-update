@@ -50,7 +50,11 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
         blockTexture(SnowBlockRegistry.STRIPPED_FROSTED_LOG.get()));
         leavesBlock(SnowBlockRegistry.FROSTED_LEAVES.get());
         blockAndItem(SnowBlockRegistry.FROSTED_PLANKS);
-
+        blockAndItem(SnowBlockRegistry.BUDDING_ICE_CRYSTAL);
+        saplingBlock(SnowBlockRegistry.SMALL_ICE_CRYSTAL_BUD);
+        saplingBlock(SnowBlockRegistry.MEDIUM_ICE_CRYSTAL_BUD);
+        saplingBlock(SnowBlockRegistry.LARGE_ICE_CRYSTAL_BUD);
+        saplingBlock(SnowBlockRegistry.ICE_CRYSTAL_CLUSTER);
         blockItem(SnowBlockRegistry.FROSTED_LOG);
         blockItem(SnowBlockRegistry.FROSTED_WOOD);
         blockItem(SnowBlockRegistry.STRIPPED_FROSTED_LOG);
@@ -240,8 +244,8 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
         itemModels().getBuilder(ForgeRegistries.BLOCKS.getKey(SnowBlockRegistry.FROSTED_LEAVES_SPIKES.get()).getPath()).parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated"))).texture("layer0", 
         blockTexture(SnowBlockRegistry.FROSTED_LEAVES_SPIKES.get()));
         saplingBlock(SnowBlockRegistry.FROSTWOOD_SAPLING);
-        itemModels().getBuilder(ForgeRegistries.BLOCKS.getKey(SnowBlockRegistry.FROSTWOOD_SAPLING.get()).getPath()).parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated"))).texture("layer0", 
-        blockTexture(SnowBlockRegistry.FROSTWOOD_SAPLING.get()));
+        //itemModels().getBuilder(ForgeRegistries.BLOCKS.getKey(SnowBlockRegistry.FROSTWOOD_SAPLING.get()).getPath()).parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated"))).texture("layer0", 
+        //blockTexture(SnowBlockRegistry.FROSTWOOD_SAPLING.get()));
 
         grassBlock(SnowBlockRegistry.SNOWY_GRASS);
         doubleGrassBlock(SnowBlockRegistry.SNOWY_TALL_GRASS);
@@ -268,15 +272,30 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
         getVariantBuilder(block).forAllStates(pState -> {
             switch (pState.getValue(SnowUpdateBlockProperties.ICE_STALACTITE_THICKNESS)) {
                 case BASE:
-                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_base", blockTexture(block).withSuffix("_base")).renderType("cutout")).build();
+                    if (pState.getValue(BlockStateProperties.VERTICAL_DIRECTION).equals(Direction.DOWN))
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_base", blockTexture(block).withSuffix("_base")).renderType("cutout")).build();
+                    else 
+                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_base_up", blockTexture(block).withSuffix("_base_up")).renderType("cutout")).build();
                 case FRUSTUM:
-                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_frustum", blockTexture(block).withSuffix("_frustum")).renderType("cutout")).build();
+                    if (pState.getValue(BlockStateProperties.VERTICAL_DIRECTION).equals(Direction.DOWN))
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_frustum", blockTexture(block).withSuffix("_frustum")).renderType("cutout")).build();
+                    else 
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_frustum_up", blockTexture(block).withSuffix("_frustum_up")).renderType("cutout")).build();
                 case MIDDLE: 
-                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_middle", blockTexture(block).withSuffix("_middle")).renderType("cutout")).build();
+                    if (pState.getValue(BlockStateProperties.VERTICAL_DIRECTION).equals(Direction.DOWN))
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_middle", blockTexture(block).withSuffix("_middle")).renderType("cutout")).build();
+                    else 
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_middle_up", blockTexture(block).withSuffix("_middle_up")).renderType("cutout")).build();
                 case TIP:
-                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip", blockTexture(block).withSuffix("_tip")).renderType("cutout")).build();
+                    if (pState.getValue(BlockStateProperties.VERTICAL_DIRECTION).equals(Direction.DOWN))
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip", blockTexture(block).withSuffix("_tip")).renderType("cutout")).build();
+                    else 
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip_up", blockTexture(block).withSuffix("_tip_up")).renderType("cutout")).build();
                 case TIP_MERGE:
-                    return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip_merge", blockTexture(block).withSuffix("_tip_merge")).renderType("cutout")).build();
+                    if (pState.getValue(BlockStateProperties.VERTICAL_DIRECTION).equals(Direction.DOWN))
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip_merge", blockTexture(block).withSuffix("_tip_merge")).renderType("cutout")).build();
+                    else 
+                        return ConfiguredModel.builder().modelFile(models().cross(resourceLocation.toString()+"_tip_merge_up", blockTexture(block).withSuffix("_tip_merge_up")).renderType("cutout")).build();
                 default:
                     return null;
             }
@@ -315,6 +334,8 @@ public class SnowUpdateBlockStateProvider extends BlockStateProvider{
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+                itemModels().getBuilder(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()).parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated"))).texture("layer0", 
+                blockTexture(blockRegistryObject.get()));
     }
 
     private void doubleGrassBlock(RegistryObject<Block> pObject) {

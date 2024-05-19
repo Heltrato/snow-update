@@ -13,7 +13,7 @@
     "ground_state": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "snow_update:ice_spike_block"
+        "Name": "minecraft:snow_block"
       }
     },
     "replaceable": "#minecraft:moss_replaceable",

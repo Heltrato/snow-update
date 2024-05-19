@@ -33,6 +33,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.technic.snow_update.SnowUpdate;
+import net.technic.snow_update.blocks.BuddingIceCrystal;
 import net.technic.snow_update.blocks.FrostedWood;
 import net.technic.snow_update.blocks.GlacierIce;
 import net.technic.snow_update.blocks.KeyStone;
@@ -336,6 +337,21 @@ public class SnowBlockRegistry {
 
     public static final RegistryObject<Block> SNOWY_STONE_BRICKS_WALL = registerBlock("snowy_stone_bricks_wall", 
     ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+
+    public static final RegistryObject<Block> BUDDING_ICE_CRYSTAL = registerBlock("budding_ice_crystal", 
+    ()-> new BuddingIceCrystal(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)));
+
+    public static final RegistryObject<Block> SMALL_ICE_CRYSTAL_BUD = registerBlock("small_ice_crystal_bud", 
+    ()-> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD)));
+    
+    public static final RegistryObject<Block> MEDIUM_ICE_CRYSTAL_BUD = registerBlock("medium_ice_crystal_bud", 
+    ()-> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD)));
+
+    public static final RegistryObject<Block> LARGE_ICE_CRYSTAL_BUD = registerBlock("large_ice_crystal_bud", 
+    ()-> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD)));
+
+    public static final RegistryObject<Block> ICE_CRYSTAL_CLUSTER = registerBlock("ice_crystal_cluster", 
+    ()-> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String pName, Supplier<T> pSupplier){
         RegistryObject<T> toReturn = BLOCKS.register(pName, pSupplier);

@@ -33,6 +33,16 @@ public class SnowUpdatePlacedFeatures {
     public static final ResourceKey<PlacedFeature> ICE_PATCH_CEILING_PLACED = registerKey("ice_patch_ceiling_placed");
     public static final ResourceKey<PlacedFeature> SNOW_PATCH_FLOOR_PLACED = registerKey("snow_patch_floor_placed");
     public static final ResourceKey<PlacedFeature> SNOW_PATCH_CEILING_PLACED = registerKey("snow_patch_ceiling_placed");
+    public static final ResourceKey<PlacedFeature> POWDER_SNOW_PATCH_FLOOR_PLACED = registerKey("powder_snow_patch_floor_placed");
+    public static final ResourceKey<PlacedFeature> POWDER_SNOW_PATCH_CEILING_PLACED = registerKey("powder_snow_patch_ceiling_placed");
+    public static final ResourceKey<PlacedFeature> KORISTONE_PATCH_FLOOR_PLACED = registerKey("koristone_patch_floor_placed");
+    public static final ResourceKey<PlacedFeature> KORISTONE_PATCH_CEILING_PLACED = registerKey("koristone_patch_ceiling_placed");
+    public static final ResourceKey<PlacedFeature> FRIGIDITE_PATCH_FLOOR_PLACED = registerKey("frigidite_patch_floor_placed");
+    public static final ResourceKey<PlacedFeature> FRIGIDITE_PATCH_CEILING_PLACED = registerKey("frigidite_patch_ceiling_placed");
+    public static final ResourceKey<PlacedFeature> LARGE_ICE_SPIKE_PLACED = registerKey("large_ice_spike_placed");
+    public static final ResourceKey<PlacedFeature> LARGE_ICE_CRYSTAL_SPIKE_PLACED = registerKey("large_ice_crystal_spike_placed");
+    public static final ResourceKey<PlacedFeature> FROZEN_POOL_PATCH_PLACED = registerKey("frozen_pool_patch_placed");
+    public static final ResourceKey<PlacedFeature> FROZEN_SPRING_PLACED = registerKey("frozen_spring_placed");
 
     public static ResourceKey<PlacedFeature> registerKey(String string) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(SnowUpdate.MOD_ID, string));
@@ -65,9 +75,38 @@ public class SnowUpdatePlacedFeatures {
 
         register(pContext, SNOW_PATCH_CEILING_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.SNOW_PATCH_CEILING), List.of(CountPlacement.of(50), InSquarePlacement.spread(), 
         PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, POWDER_SNOW_PATCH_FLOOR_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.POWDER_SNOW_PATCH_FLOOR), List.of(CountPlacement.of(50), InSquarePlacement.spread(), 
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, POWDER_SNOW_PATCH_CEILING_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.POWDER_SNOW_PATCH_CEILING), List.of(CountPlacement.of(50), InSquarePlacement.spread(), 
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, KORISTONE_PATCH_FLOOR_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.KORISTONE_PATCH_FLOOR), List.of(CountPlacement.of(5), InSquarePlacement.spread(), 
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, KORISTONE_PATCH_CEILING_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.KORISTONE_PATCH_CEILING), List.of(CountPlacement.of(5), InSquarePlacement.spread(), 
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, FRIGIDITE_PATCH_FLOOR_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.FRIGIDITE_PATCH_FLOOR), List.of(CountPlacement.of(256), InSquarePlacement.spread(), 
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, FRIGIDITE_PATCH_CEILING_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.FRIGIDITE_PATCH_CEILING), List.of(CountPlacement.of(256), InSquarePlacement.spread(), 
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, LARGE_ICE_SPIKE_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.LARGE_ICE_SPIKE_CONFIG), List.of(CountPlacement.of(10), InSquarePlacement.spread(),
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, LARGE_ICE_CRYSTAL_SPIKE_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.LARGE_CRYSTAL_SPIKE_CONFIG), List.of(CountPlacement.of(10), InSquarePlacement.spread(),
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, FROZEN_POOL_PATCH_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.FROZEN_POOL), List.of(CountPlacement.of(10), InSquarePlacement.spread(),
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
+
+        register(pContext, FROZEN_SPRING_PLACED, configuredFeature.getOrThrow(SnowUpdateConfigFeatures.FROZEN_SPRING), List.of(CountPlacement.of(10), InSquarePlacement.spread(),
+        PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome()));
     }
 
-    
 
     public static void register(BootstapContext<PlacedFeature> pContext, ResourceKey<PlacedFeature> pKey, Holder<ConfiguredFeature<?, ?>> pFeatureConfig, List<PlacementModifier> pModifiers){
         pContext.register(pKey, new PlacedFeature(pFeatureConfig, pModifiers));

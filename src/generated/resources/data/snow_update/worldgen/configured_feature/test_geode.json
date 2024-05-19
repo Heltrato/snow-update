@@ -5,7 +5,7 @@
       "alternate_inner_layer_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "minecraft:emerald_ore"
+          "Name": "snow_update:budding_ice_crystal"
         }
       },
       "cannot_replace": "#minecraft:features_cannot_replace",
@@ -18,15 +18,37 @@
       "inner_layer_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "minecraft:deepslate",
-          "Properties": {
-            "axis": "y"
-          }
+          "Name": "snow_update:glacier_block_material"
         }
       },
       "inner_placements": [
         {
-          "Name": "minecraft:gold_block"
+          "Name": "snow_update:small_ice_crystal_bud",
+          "Properties": {
+            "facing": "up",
+            "waterlogged": "false"
+          }
+        },
+        {
+          "Name": "snow_update:medium_ice_crystal_bud",
+          "Properties": {
+            "facing": "up",
+            "waterlogged": "false"
+          }
+        },
+        {
+          "Name": "snow_update:large_ice_crystal_bud",
+          "Properties": {
+            "facing": "up",
+            "waterlogged": "false"
+          }
+        },
+        {
+          "Name": "snow_update:ice_crystal_cluster",
+          "Properties": {
+            "facing": "up",
+            "waterlogged": "false"
+          }
         }
       ],
       "invalid_blocks": "#minecraft:geode_invalid_blocks",
@@ -39,7 +61,7 @@
       "outer_layer_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "minecraft:emerald_block"
+          "Name": "minecraft:smooth_basalt"
         }
       }
     },
