@@ -1,7 +1,5 @@
 package net.technic.snow_update.entity.ai;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -10,6 +8,8 @@ import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.phys.Vec3;
 import net.technic.snow_update.entity.JuvenileYetiEntity;
+
+import javax.annotation.Nullable;
 
 public class SnowBallThrowGoal extends RangedAttackGoal {
 
@@ -28,21 +28,21 @@ public class SnowBallThrowGoal extends RangedAttackGoal {
 
     public SnowBallThrowGoal(RangedAttackMob pRangedAttackMob, double pSpeedModifier, int pAttackInterval, float pAttackRadius) {
         super(pRangedAttackMob, pSpeedModifier, pAttackInterval, pAttackRadius);
-        this.entity = ((JuvenileYetiEntity)pRangedAttackMob);
-        this.mob = (Mob)pRangedAttackMob;
+        this.entity = ((JuvenileYetiEntity) pRangedAttackMob);
+        this.mob = (Mob) pRangedAttackMob;
         this.speedModifier = pSpeedModifier;
         this.attackRadius = pAttackRadius;
         this.attackRadiusSqr = pAttackRadius * pAttackRadius;
-        
+
     }
 
     public boolean canUse() {
         LivingEntity livingentity = this.mob.getTarget();
         if (livingentity != null && livingentity.isAlive()) {
-           this.target = livingentity;
-           return true;
+            this.target = livingentity;
+            return true;
         } else {
-           return false;
+            return false;
         }
     }
 
@@ -54,17 +54,17 @@ public class SnowBallThrowGoal extends RangedAttackGoal {
         return this.canUse() || this.target.isAlive() && !this.mob.getNavigation().isDone();
     }
 
-    protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr){
-        if(isEnemyInDistance(pDistToEnemySqr)){
+    protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr) {
+        if (isEnemyInDistance(pDistToEnemySqr)) {
             shouldCountTillNextAttack = true;
 
-            if(isTimeToStartAnim()){
+            if (isTimeToStartAnim()) {
                 entity.setAttacking(true);
 
             }
 
-            if(isTimeToAttack()){
-                float f = (float)Math.sqrt(pDistToEnemySqr) / this.attackRadius;
+            if (isTimeToAttack()) {
+                float f = (float) Math.sqrt(pDistToEnemySqr) / this.attackRadius;
                 float f1 = Mth.clamp(f, 0.1F, 1.0F);
                 this.mob.getLookControl().setLookAt(pEnemy.getX(), pEnemy.getEyeY(), pEnemy.getZ());
                 performRangedAttack(pEnemy, f1);
@@ -75,9 +75,9 @@ public class SnowBallThrowGoal extends RangedAttackGoal {
             shouldCountTillNextAttack = false;
             entity.setAttacking(false);
             entity.setAnimationTimeout(0);
-            
-       
-            if (!(pDistToEnemySqr > (double)this.attackRadiusSqr)) {
+
+
+            if (!(pDistToEnemySqr > (double) this.attackRadiusSqr)) {
                 this.mob.getNavigation().stop();
             } else {
                 this.mob.getNavigation().moveTo(this.target, this.speedModifier);
@@ -89,46 +89,49 @@ public class SnowBallThrowGoal extends RangedAttackGoal {
         return ticksUntilNextAttack <= attackDelay;
     }
 
-    private boolean isEnemyInDistance(double pDistToEnemySqr){
+    private boolean isEnemyInDistance(double pDistToEnemySqr) {
         return pDistToEnemySqr <= this.attackRadiusSqr;
     }
 
-    protected void resetCD(){
-        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay+15);
+    protected void resetCD() {
+        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay + 15);
     }
 
-    protected boolean isTimeToAttack(){
+    protected boolean isTimeToAttack() {
         return this.ticksUntilNextAttack <= 0;
     }
 
-    protected void performRangedAttack(LivingEntity pEnemy, float pDistToEnemySqr){
+    protected void performRangedAttack(LivingEntity pEnemy, float pDistToEnemySqr) {
         this.resetCD();
         entity.performRangedAttack(pEnemy, pDistToEnemySqr);
     }
-    
+
     @Override
-    public void start(){
+    public void start() {
         super.start();
         this.ticksUntilNextAttack = 35;
         this.attackDelay = 35;
     }
 
     @Override
-    public void tick(){
-        if(shouldCountTillNextAttack){
-            this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack-1, 0);
+    public void tick() {
+        if (shouldCountTillNextAttack) {
+            this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
         }
         double d0 = this.mob.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
-        if (d0 <= this.avoidDistSqr){
+        if (d0 <= this.avoidDistSqr) {
             Vec3 vec3 = DefaultRandomPos.getPosAway(this.entity, 10, 5, this.target.position());
             this.mob.getLookControl().setLookAt(entity);
+            if (vec3 == null) {
+                return;
+            }
             this.mob.getNavigation().moveTo(vec3.x, vec3.y, vec3.z, this.speedModifier);
         }
         checkAndPerformAttack(target, d0);
     }
-    
+
     @Override
-    public void stop(){
+    public void stop() {
         entity.setAttacking(false);
         super.stop();
     }
