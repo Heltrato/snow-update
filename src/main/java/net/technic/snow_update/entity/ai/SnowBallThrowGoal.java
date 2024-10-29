@@ -134,6 +134,7 @@ public class SnowBallThrowGoal extends RangedAttackGoal {
     public void stop() {
         entity.setAttacking(false);
         super.stop();
+        //
     }
 }
     
